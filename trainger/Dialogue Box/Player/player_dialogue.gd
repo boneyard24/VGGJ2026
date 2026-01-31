@@ -2,15 +2,22 @@ extends Panel
 
 @onready var text_label: RichTextLabel = $DialogueText
 
-var boss_dialogue: Array[String] = []
-var current_line := 0
+enum { SUCCESS, FAILURE }
+var success_dialogue: Array[String] = []
 
-var typing_speed := 0.0
-var line_wait_time := 0.0
+
+
+var success_current_line := 0
+var success_typing_speed := 0.0
+var success_line_wait_time := 0.0
+
+var failure_current_line := 0
+var failure_typing_speed := 0.0
+var failure_line_wait_time := 0.0
 
 func _ready():
-	boss_dialogue = load_dialogue_json("res://Dialogue Box/dialogue_data.json")
-	if boss_dialogue.is_empty():
+	success_dialogue = load_dialogue_json("res://Dialogue Box/dialogue_data.json")
+	if success_dialogue.is_empty():
 		return
 
 	start_dialogue()
@@ -29,8 +36,8 @@ func load_dialogue_json(path: String) -> Array[String]:
 		push_error("Invalid JSON format in: " + path)
 		return []
 	
-	typing_speed = parsed["dialogue"]["boss"]["typing_speed"]
-	line_wait_time = parsed["dialogue"]["boss"]["line_wait_time"]
+	success_typing_speed = parsed["dialogue"]["player"]["success"]["typing_speed"]
+	success_line_wait_time = parsed["dialogue"]["player"]["success"]["line_wait_time"]
 
 	# Navigate to: dialogue → boss → lines
 	if parsed.has("dialogue") \
@@ -46,24 +53,24 @@ func load_dialogue_json(path: String) -> Array[String]:
 	return []
 
 func start_dialogue():
-	current_line = 0
-	await show_line(boss_dialogue[current_line])
+	success_current_line = 0
+	await show_line(success_dialogue[success_current_line])
 
 func show_line(text: String) -> void:
 	text_label.clear()
 
-	for char in text:
-		text_label.append_text(char)
-		await get_tree().create_timer(typing_speed).timeout
+	for ch in text:
+		text_label.append_text(ch)
+		await get_tree().create_timer(success_typing_speed).timeout
 
-	await get_tree().create_timer(line_wait_time).timeout
+	await get_tree().create_timer(success_line_wait_time).timeout
 	await advance_line()
 
 func advance_line() -> void:
-	current_line += 1
+	success_current_line += 1
 
-	if current_line < boss_dialogue.size():
-		await show_line(boss_dialogue[current_line])
+	if success_current_line < success_dialogue.size():
+		await show_line(success_dialogue[success_current_line])
 	else:
 		dialogue_finished()
 

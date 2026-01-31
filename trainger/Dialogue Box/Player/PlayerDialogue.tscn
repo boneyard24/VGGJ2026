@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c1o4crbloc3vm"]
+
+[ext_resource type="Script" uid="uid://bphci0ua0uym3" path="res://Dialogue Box/Boss/dialogue_box.gd" id="1_inbsp"]
+
+[node name="Game" type="Node2D" unique_id=1743243020]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1335453006]
+
+[node name="DialogueBox" type="Panel" parent="CanvasLayer" unique_id=1367545682]
+offset_right = 607.0
+offset_bottom = 224.0
+script = ExtResource("1_inbsp")
+
+[node name="DialogueText" type="RichTextLabel" parent="CanvasLayer/DialogueBox" unique_id=1924625265]
+custom_minimum_size = Vector2(600, 200)
+layout_mode = 0
+offset_right = 606.0
+offset_bottom = 222.0
+bbcode_enabled = true
+text = "test [wave] aasdsd [/wave]"
+scroll_active = false
+justification_flags = 161

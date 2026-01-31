@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dbebq51rari4e"]
+
+[node name="AudioManager" type="Node" unique_id=195267624]
+
+[node name="Music" type="Node" parent="." unique_id=2043761988]
+
+[node name="SFX" type="Node" parent="." unique_id=1530389587]

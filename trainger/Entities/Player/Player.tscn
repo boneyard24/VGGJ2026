@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://csrex37lsgvxe"]
+
+[ext_resource type="Texture2D" uid="uid://d30muetojko4s" path="res://icon.svg" id="1_e5kic"]
+[ext_resource type="Script" uid="uid://d2ytlex3aamt" path="res://Entities/Player/player.gd" id="1_ww0jn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u36tg"]
+size = Vector2(128, 128)
+
+[sub_resource type="Animation" id="Animation_e5kic"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ww0jn"]
+resource_name = "shake"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666666, 0.13333333, 0.20000005),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(3, 0), Vector2(-3, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vweq0"]
+_data = {
+&"RESET": SubResource("Animation_e5kic"),
+&"shake": SubResource("Animation_ww0jn")
+}
+
+[node name="Player" type="AnimatableBody2D" unique_id=696920407]
+position = Vector2(10, 0)
+script = ExtResource("1_ww0jn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=345029254]
+shape = SubResource("RectangleShape2D_u36tg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1757642543]
+texture = ExtResource("1_e5kic")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=535852127]
+libraries/ = SubResource("AnimationLibrary_vweq0")

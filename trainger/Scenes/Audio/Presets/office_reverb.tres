@@ -1,0 +1,10 @@
+[gd_resource type="AudioEffectReverb" format=3 uid="uid://c71budyffya6d"]
+
+[resource]
+resource_name = "Reverb"
+predelay_msec = 85.0
+predelay_feedback = 0.35
+room_size = 0.29
+damping = 0.35
+hipass = 0.78
+wet = 0.31

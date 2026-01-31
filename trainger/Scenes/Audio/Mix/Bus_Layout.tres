@@ -1,0 +1,53 @@
+[gd_resource type="AudioBusLayout" format=3 uid="uid://c6s8khymfge6v"]
+
+[ext_resource type="AudioEffectReverb" uid="uid://c71budyffya6d" path="res://Scenes/Audio/Presets/office_reverb.tres" id="1_j6lcx"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_g28q7"]
+resource_name = "Reverb"
+predelay_msec = 140.0
+predelay_feedback = 0.35
+room_size = 0.4
+hipass = 0.5
+wet = 0.6
+
+[resource]
+bus/1/name = &"MUSIC"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = -0.12827492
+bus/1/send = &"Master"
+bus/2/name = &"SFX"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/3/name = &"MusicDiegetic"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = 0.0
+bus/3/send = &"MUSIC"
+bus/3/effect/0/effect = SubResource("AudioEffectReverb_g28q7")
+bus/3/effect/0/enabled = true
+bus/4/name = &"Music2D"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = 0.0
+bus/4/send = &"MUSIC"
+bus/5/name = &"Ambience"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = 0.0
+bus/5/send = &"SFX"
+bus/5/effect/0/effect = ExtResource("1_j6lcx")
+bus/5/effect/0/enabled = true
+bus/6/name = &"UI"
+bus/6/solo = false
+bus/6/mute = false
+bus/6/bypass_fx = false
+bus/6/volume_db = 0.0
+bus/6/send = &"SFX"

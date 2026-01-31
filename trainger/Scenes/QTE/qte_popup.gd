@@ -67,4 +67,3 @@ func update_progress_bar(delta: float):
 func end_qte(successful: bool):
 	qte_popup_complete.emit(successful)
 	queue_free()
-	

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c80hj0bya80f4" path="res://Scenes/QTE/qte_popup.gd" id="1_ng8vx"]
 [ext_resource type="Script" uid="uid://b4hkatc52dtad" path="res://Scenes/QTE/combo_tracker.gd" id="2_1asnj"]
+[ext_resource type="PackedScene" uid="uid://cc7om3ba06g5i" path="res://Scenes/QTE/SpriteBoxContainer/SpriteBoxContainer.tscn" id="3_yvlxk"]
 
 [node name="QtePopup" type="Node2D" unique_id=1741924764]
 script = ExtResource("1_ng8vx")
@@ -20,3 +21,5 @@ offset_bottom = 14.0
 
 [node name="ComboTracker" type="Node" parent="." unique_id=1334100137]
 script = ExtResource("2_1asnj")
+
+[node name="SpriteBoxContainer" parent="." unique_id=1093026482 instance=ExtResource("3_yvlxk")]

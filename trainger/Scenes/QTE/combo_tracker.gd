@@ -7,10 +7,12 @@ var input_tracking := false
 
 # Predefined combos
 const SPECIAL_MOVE = ["up", "down"]
+const INPUT_OPTIONS = ["up", "down", "left", "right"]
 
 func _ready():
 	#timer.wait_time = combo_window
 	#timer.one_shot = true
+	
 	input_tracking = true
 	
 

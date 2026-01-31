@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://qf4yt6nk5f0x"]
+
+[ext_resource type="Texture2D" uid="uid://c5uo1nks8ct2q" path="res://Assets/comptesting/Composition_Draft-01@0.5x.jpg" id="1_w2aaw"]
+
+[node name="CompTesting" type="Node2D" unique_id=1638788144]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=507940580]
+texture = ExtResource("1_w2aaw")

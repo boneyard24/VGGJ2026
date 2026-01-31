@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cl7fsjf2d4taa"]
 
+[ext_resource type="Script" uid="uid://bphci0ua0uym3" path="res://Dialogue Box/dialogue_box.gd" id="1_djagf"]
+
 [node name="Game" type="Node2D" unique_id=1743243020]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1335453006]
@@ -7,6 +9,7 @@
 [node name="DialogueBox" type="Panel" parent="CanvasLayer" unique_id=1367545682]
 offset_right = 607.0
 offset_bottom = 224.0
+script = ExtResource("1_djagf")
 
 [node name="DialogueText" type="RichTextLabel" parent="CanvasLayer/DialogueBox" unique_id=1924625265]
 custom_minimum_size = Vector2(600, 200)

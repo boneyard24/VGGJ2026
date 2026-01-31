@@ -8,7 +8,7 @@ var progBarVal := 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	QTEPOP.qte_popup_done.connect(_on_qteTimer_completed)
+	QTEPOP.qte_popup_complete.connect(_on_qteTimer_completed)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

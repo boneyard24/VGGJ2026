@@ -11,3 +11,7 @@ QTETimer = NodePath("Timer")
 [node name="Timer" type="Timer" parent="." unique_id=1801738351]
 one_shot = true
 autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1767744681]
+offset_right = 149.0
+offset_bottom = 27.0

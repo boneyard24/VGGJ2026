@@ -3,8 +3,17 @@
 [ext_resource type="Script" uid="uid://b1vfu32xf1p07" path="res://coreytest/coreytest.gd" id="1_7qaf8"]
 [ext_resource type="PackedScene" uid="uid://c6qwcyaucgiv0" path="res://Scenes/QTE/QTEPopup.tscn" id="1_ebloy"]
 
-[node name="Coreytestscene" type="Node2D" unique_id=1406705118 node_paths=PackedStringArray("QTEPOP")]
+[node name="Coreytestscene" type="Node2D" unique_id=1406705118 node_paths=PackedStringArray("QTEPOP", "progBar")]
 script = ExtResource("1_7qaf8")
 QTEPOP = NodePath("QtePopup")
+progBar = NodePath("ProgressBar")
 
 [node name="QtePopup" parent="." unique_id=1741924764 instance=ExtResource("1_ebloy")]
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=166103031]
+offset_right = 89.0
+offset_bottom = 27.0
+max_value = 30.0
+step = 0.5
+rounded = true
+show_percentage = false

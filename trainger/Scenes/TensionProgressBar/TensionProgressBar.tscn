@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c4g1y7ktxton4"]
+
+[ext_resource type="Script" uid="uid://cy4c8ke0110vq" path="res://Scenes/TensionProgressBar/tension_progress_bar.gd" id="1_th8qu"]
+
+[node name="TensionProgressBar" type="Node2D" unique_id=1740585256]
+script = ExtResource("1_th8qu")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1830322397]
+offset_right = 194.0
+offset_bottom = 27.0

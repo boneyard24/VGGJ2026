@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dbebq51rari4e"]
 
-[ext_resource type="AudioStream" uid="uid://dxst8id1wgvtk" path="res://Scenes/Audio/SourceFiles/MX_ElevatorMusicTEMP_01.ogg" id="1_stytc"]
+[ext_resource type="AudioStream" uid="uid://dxst8id1wgvtk" path="res://Scenes/Audio/SourceFiles/Music/MX_ElevatorMusicTEMP_01.ogg" id="1_stytc"]
 
 [node name="AudioManager" type="Node" unique_id=195267624]
 
@@ -8,7 +8,7 @@
 
 [node name="MX_MainMusic" type="AudioStreamPlayer" parent="Music" unique_id=1487850900]
 stream = ExtResource("1_stytc")
-volume_db = -9.936
+volume_db = -8.0
 autoplay = true
 max_polyphony = 2
 

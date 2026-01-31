@@ -12,11 +12,13 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+"""
 func _process(delta: float) -> void:
 	print("value increase: ", delta)
 	progBarVal += delta
 	progBar.value = progBarVal
 	print("value increase: ", progBar.value)
+	"""
  
 func _on_qteTimer_completed(eventSuccess : bool):
 	print("Timercompleted: ", eventSuccess)

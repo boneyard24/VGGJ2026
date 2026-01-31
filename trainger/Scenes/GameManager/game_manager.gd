@@ -1,15 +1,14 @@
 extends Node2D
 
-@onready var popupTimer := $Timer
+@onready var qteSpawnTimer := $QTESpawnTimer
 
 #const QTEScene: PackedScene = preload("res://Scenes/QTE/QTEPopup.tscn")
 @onready var QTEScene = preload("res://Scenes/QTE/QTEPopup.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	popupTimer.timeout.connect(SpawnQTE)
-	popupTimer.start(2) # Manually start the timer if Auto Start is off
-
+	qteSpawnTimer.timeout.connect(SpawnQTE)
+	qteSpawnTimer.start(2) # Manually start the timer if Auto Start is off
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -28,4 +27,5 @@ func SpawnQTE() -> void:
 
 func _qte_result(eventSuccess: bool) -> void:
 	print("GM: Event Success - ", eventSuccess)
+	qteSpawnTimer.start(2)
 	

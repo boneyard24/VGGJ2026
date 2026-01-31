@@ -23,6 +23,25 @@ func _ready() -> void:
 	
 	QTETimer.timeout.connect(_on_timer_timeout)
 	QTETimer.start(randTime) # Manually start the timer if Auto Start is off
+	
+	"""
+	#Random Screen Position Segment
+	"""
+	# Get the screen size (viewport dimensions) as a Vector2
+	var screen_size: Vector2 = get_viewport().get_visible_rect().size
+	
+	# Generate random X and Y coordinates within the screen boundaries
+	# Use randf_range for floating-point positions, or randi_range for integer positions
+	var rand_x: float = rng.randf_range(0, screen_size.x)
+	var rand_y: float = rng.randf_range(0, screen_size.y)
+	
+	# Create a new random position vector
+	var random_position: Vector2 = Vector2(rand_x, rand_y)
+	
+	# Set the object's position
+	position = random_position
+	
+	print("New random position: ", random_position)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

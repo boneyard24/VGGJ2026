@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c6qwcyaucgiv0"]
 
 [ext_resource type="Script" uid="uid://c80hj0bya80f4" path="res://Scenes/QTE/qte_popup.gd" id="1_ng8vx"]
+[ext_resource type="Script" uid="uid://b4hkatc52dtad" path="res://Scenes/QTE/combo_tracker.gd" id="2_1asnj"]
 
 [node name="QtePopup" type="Node2D" unique_id=1741924764]
 script = ExtResource("1_ng8vx")
@@ -12,5 +13,10 @@ one_shot = true
 autostart = true
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1767744681]
-offset_right = 149.0
-offset_bottom = 27.0
+offset_left = -74.0
+offset_top = -13.0
+offset_right = 75.0
+offset_bottom = 14.0
+
+[node name="ComboTracker" type="Node" parent="." unique_id=1334100137]
+script = ExtResource("2_1asnj")

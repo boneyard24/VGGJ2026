@@ -1,3 +1,13 @@
 [gd_scene format=3 uid="uid://c6qwcyaucgiv0"]
 
-[node name="QtePopup" type="Node2D" unique_id=1741924764]
+[ext_resource type="Script" uid="uid://c80hj0bya80f4" path="res://Scenes/QTE/qte_popup.gd" id="1_ng8vx"]
+
+[node name="QtePopup" type="Node2D" unique_id=1741924764 node_paths=PackedStringArray("QTETimer")]
+script = ExtResource("1_ng8vx")
+QTETimer = NodePath("Timer")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2106237570]
+
+[node name="Timer" type="Timer" parent="." unique_id=1801738351]
+one_shot = true
+autostart = true

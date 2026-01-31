@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://i2gfvcoqkjtr"]
+
+[ext_resource type="Script" uid="uid://b1vfu32xf1p07" path="res://coreytest/coreytest.gd" id="1_7qaf8"]
+[ext_resource type="PackedScene" uid="uid://c6qwcyaucgiv0" path="res://Scenes/QTE/QTEPopup.tscn" id="1_ebloy"]
+
+[node name="Coreytestscene" type="Node2D" unique_id=1406705118 node_paths=PackedStringArray("QTEPOP")]
+script = ExtResource("1_7qaf8")
+QTEPOP = NodePath("QtePopup")
+
+[node name="QtePopup" parent="." unique_id=1741924764 instance=ExtResource("1_ebloy")]

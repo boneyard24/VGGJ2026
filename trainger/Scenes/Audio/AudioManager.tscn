@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://dbebq51rari4e"]
 
+[ext_resource type="AudioStream" uid="uid://dxst8id1wgvtk" path="res://Scenes/Audio/SourceFiles/MX_ElevatorMusicTEMP_01.ogg" id="1_stytc"]
+
 [node name="AudioManager" type="Node" unique_id=195267624]
 
 [node name="Music" type="Node" parent="." unique_id=2043761988]
+
+[node name="MX_MainMusic" type="AudioStreamPlayer" parent="Music" unique_id=1487850900]
+stream = ExtResource("1_stytc")
+volume_db = -9.936
+autoplay = true
+max_polyphony = 2
 
 [node name="SFX" type="Node" parent="." unique_id=1530389587]

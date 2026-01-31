@@ -1,15 +1,24 @@
 [gd_scene format=3 uid="uid://dbebq51rari4e"]
 
 [ext_resource type="AudioStream" uid="uid://dxst8id1wgvtk" path="res://Scenes/Audio/SourceFiles/Music/MX_ElevatorMusicTEMP_01.ogg" id="1_stytc"]
+[ext_resource type="AudioStream" uid="uid://b6rc3qwe1uv62" path="res://Scenes/Audio/SourceFiles/SFX/AMB_Office_01.ogg" id="2_whaik"]
 
 [node name="AudioManager" type="Node" unique_id=195267624]
 
 [node name="Music" type="Node" parent="." unique_id=2043761988]
 
-[node name="MX_MainMusic" type="AudioStreamPlayer" parent="Music" unique_id=1487850900]
+[node name="MX_MainMusic_Office" type="AudioStreamPlayer" parent="Music" unique_id=1487850900]
 stream = ExtResource("1_stytc")
-volume_db = -8.0
+volume_db = -16.0
 autoplay = true
-max_polyphony = 2
+bus = &"MusicDiegetic"
 
 [node name="SFX" type="Node" parent="." unique_id=1530389587]
+
+[node name="Ambience" type="Node" parent="SFX" unique_id=712031248]
+
+[node name="AMB_Office" type="AudioStreamPlayer" parent="SFX/Ambience" unique_id=230051897]
+stream = ExtResource("2_whaik")
+volume_db = -22.0
+autoplay = true
+bus = &"Ambience"

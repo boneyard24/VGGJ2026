@@ -1,0 +1,11 @@
+{
+	"character_lines": {
+		"boss": {
+			"lines": [
+				"Page 1 of text",
+				"Page 2 of text: Electric Boogaloo",
+                "And so on..."
+			]
+		}
+	}
+}

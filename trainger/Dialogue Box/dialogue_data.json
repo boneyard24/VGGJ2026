@@ -1,10 +1,22 @@
 {
-	"character_lines": {
+	"dialogue": {
 		"boss": {
 			"lines": [
 				"Page 1 of text",
 				"Page 2 of text: Electric Boogaloo",
                 "And so on..."
+			]
+		},
+		"player": {
+			"normal_reply": [
+				"Oh I see",
+				"Mhm",
+                "Interesting"
+			],
+			"train_reply": [
+				"Trains",
+				"Trains?",
+                "TRAINS!"
 			]
 		}
 	}

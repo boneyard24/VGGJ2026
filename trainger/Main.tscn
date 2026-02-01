@@ -64,3 +64,5 @@ position = Vector2(790, 490)
 
 [node name="Environment" parent="." unique_id=1706885947 instance=ExtResource("10_wkp8b")]
 position = Vector2(960, 540)
+
+[connection signal="dialogue_duration_calculated" from="DialogueBox" to="TensionProgressBar" method="_on_dialogue_box_dialogue_duration_calculated"]

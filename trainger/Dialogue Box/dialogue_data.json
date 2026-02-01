@@ -2,10 +2,10 @@
 	"dialogue": {
 		"boss": {
 			"typing_speed": 0.04,
-			"line_wait_time": 3,
+			"line_wait_time": 1,
 			"lines": [
 				"Good morning Perry, how was the weekend?",
-				"Great good to hear, you know it's good that the young bloods like you really take the time to enjoy life outside these walls, cause once we get you up to speed and [rainbow] chugging [/rainbow] along you’ll realiz e just how good we have it here.",
+				"Great good to hear, you know it's good that the young bloods like you really take the time to enjoy life outside these walls, cause once we get you up to speed and [rainbow] chugging [/rainbow] along you’ll realize just how good we have it here.",
 				"Gotta say. I really like what you’re doing with that [rainbow] Kodama [/rainbow] proposal. Lined it all up properly, what's the saying Swans on a Line?",
 				 "Eh doesn’t matter, words are expensive as it is. Only real nutters care about those sorta technicalities.",
 				"Couldn't tell you how often Gordon in accounting is trying to get me to realign on the morale groups bi-daily check in.",

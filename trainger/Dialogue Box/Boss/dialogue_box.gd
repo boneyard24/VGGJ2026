@@ -8,11 +8,16 @@ var current_line := 0
 var typing_speed := 0.0
 var line_wait_time := 0.0
 
+var total_duration := 0.0
+
 func _ready():
 	boss_dialogue = load_dialogue_json("res://Dialogue Box/dialogue_data.json")
 
 	typing_speed = boss_dialogue.typing_speed
 	line_wait_time = boss_dialogue.line_wait_time
+
+	total_duration = calculate_boss_dialogue_duration()
+	print("Total Boss Dialogue Duration: ", total_duration)
 
 	if boss_dialogue.is_empty():
 		push_warning("Boss dialogue is empty.")
@@ -56,3 +61,9 @@ func advance_line() -> void:
 
 func dialogue_finished():
 	print("Dialogue complete.")
+
+func calculate_boss_dialogue_duration() -> float:
+	var duration := 0.0
+	for line in boss_dialogue.lines:
+		duration += typing_speed * line.length() + line_wait_time
+	return duration

@@ -6,7 +6,7 @@ extends Node2D
 @onready var QTEScene = preload("res://Scenes/QTE/QTEPopup.tscn")
 @onready var GameOverUI := $"../GameOver"
 @onready var PlayerBox := $"../PlayerBox"
-@onready var AudioManager := $"../AudioManager"
+#@onready var AudioManager := $"../AudioManager"
 @onready var DialogueBox := $"../DialogueBox"
 
 const MAX_FAILS := 3

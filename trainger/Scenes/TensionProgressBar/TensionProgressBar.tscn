@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c4g1y7ktxton4"]
 
 [ext_resource type="Script" uid="uid://cy4c8ke0110vq" path="res://Scenes/TensionProgressBar/tension_progress_bar.gd" id="1_th8qu"]
-[ext_resource type="Texture2D" uid="uid://bkofha5e7aurg" path="res://Scenes/TensionProgressBar/6_Train@0.75x@0.75x.png" id="2_xh5px"]
+[ext_resource type="Texture2D" uid="uid://cnfigwq1avo6t" path="res://Assets/Railroad/6_Train@0.75x@0.75x.png" id="2_xh5px"]
 
 [node name="TensionProgressBar" type="Node2D" unique_id=1740585256]
 script = ExtResource("1_th8qu")

@@ -8,6 +8,7 @@ extends Node2D
 @onready var PlayerBox := $"../PlayerBox"
 #@onready var AudioManager := $"../AudioManager"
 @onready var DialogueBox := $"../DialogueBox"
+@onready var TensionProgressBar := $"../TensionProgressBar"
 
 const MAX_FAILS := 3
 var current_fails := 0
@@ -64,6 +65,7 @@ func GameOver() -> void:
 	AudioManager.play_prompt_lose()
 	AudioManager.update_main_music_gameover()
 	DialogueBox.stop()
+	TensionProgressBar.stop()
 	
 func ResetGame() -> void:
 	current_fails = 0
@@ -73,3 +75,4 @@ func ResetGame() -> void:
 	AudioManager.update_main_music_reset()
 	AudioManager.play_restart()
 	DialogueBox.start()
+	TensionProgressBar.start()

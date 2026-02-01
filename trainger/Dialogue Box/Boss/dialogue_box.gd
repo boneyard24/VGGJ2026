@@ -18,11 +18,10 @@ func _ready():
 	boss_dialogue = load_dialogue_json("res://Dialogue Box/dialogue_data.json")
 
 	typing_speed = boss_dialogue.typing_speed
+	print(typing_speed)
 	line_wait_time = boss_dialogue.line_wait_time
 
 	total_duration = calculate_boss_dialogue_duration()
-	print("Total Boss Dialogue Duration: ", total_duration)
-	dialogue_duration_calculated.emit(total_duration)
 
 	if boss_dialogue.is_empty():
 		push_warning("Boss dialogue is empty.")
@@ -87,4 +86,8 @@ func calculate_boss_dialogue_duration() -> float:
 	var duration := 0.0
 	for line in boss_dialogue.lines:
 		duration += typing_speed * line.length() + line_wait_time
+	
+	print("dialogue_box.gd - Total Boss Dialogue Duration: ", duration)
+	dialogue_duration_calculated.emit(duration)
+	
 	return duration

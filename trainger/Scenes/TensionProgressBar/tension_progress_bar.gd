@@ -8,8 +8,7 @@ var velocity: float = 0.0
 func _ready() -> void:
 	var dialogue_box = get_tree().root.get_node("Main/DialogueBox")
 	if dialogue_box:
-		dialogue_box.dialogue_duration_calculated.connect(_on_dialogue_duration_calculated)
-		print ("Dialogue duration: ", dialogue_duration)
+		dialogue_box.dialogue_duration_calculated.connect(_on_dialogue_box_dialogue_duration_calculated)
 	else:
 		push_warning("Could not find dialogue box node")
 
@@ -18,13 +17,17 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if velocity > 0:
 		progress_train.position.x += velocity * delta
+		# Stop when train reaches the end of the display
+		if progress_train.position.x - progress_train.texture.get_width() >= get_viewport().get_visible_rect().size.x:
+			velocity = 0
 
-func _on_dialogue_duration_calculated(duration: float) -> void:
+func UpdateProgress(_progressChange: float):
+	pass
+
+
+func _on_dialogue_box_dialogue_duration_calculated(duration: float) -> void:
 	dialogue_duration = duration
 	if dialogue_duration > 0:
 		velocity = get_viewport().get_visible_rect().size.x / dialogue_duration
-	print("Tension bar received dialogue duration: ", dialogue_duration)
+	print("tension_progress_bar.gd received dialogue duration: ", dialogue_duration)
 	print("Velocity set to: ", velocity)
-
-func UpdateProgress(progressChange: float):
-	pass

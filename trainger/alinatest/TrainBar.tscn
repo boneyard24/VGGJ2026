@@ -14,3 +14,5 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="TensionProgressBar" parent="." unique_id=1740585256 instance=ExtResource("2_dk2qt")]
+
+[connection signal="dialogue_duration_calculated" from="DialogueBox" to="TensionProgressBar" method="_on_dialogue_box_dialogue_duration_calculated"]

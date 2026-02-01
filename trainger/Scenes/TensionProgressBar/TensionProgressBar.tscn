@@ -12,7 +12,7 @@ position = Vector2(0, 28)
 texture = ExtResource("2_krgfr")
 centered = false
 
-[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=1299537264]
+[node name="RailRoad" type="Sprite2D" parent="." unique_id=1299537264]
 z_index = -5
 position = Vector2(930.00006, 172)
 scale = Vector2(0.9992015, 1.0064411)

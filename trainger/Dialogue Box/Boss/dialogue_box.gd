@@ -17,6 +17,7 @@ var stop_playback := false
 func _ready():
 	text_label.bbcode_enabled = true
 	boss_dialogue = load_dialogue_json("res://Dialogue Box/dialogue_data.json")
+	print("Loaded Boss Dialogue")
 
 	typing_speed = boss_dialogue.typing_speed
 	line_wait_time = boss_dialogue.line_wait_time
@@ -26,7 +27,7 @@ func _ready():
 	if boss_dialogue.is_empty():
 		push_warning("Boss dialogue is empty.")
 		return
-
+	
 	start()
 
 func load_dialogue_json(path: String) -> Dictionary:
@@ -42,6 +43,7 @@ func load_dialogue_json(path: String) -> Dictionary:
 	return json.dialogue.boss
 
 func start():
+	stop_playback = false
 	current_line = 0
 	await show_line(boss_dialogue.lines[current_line])
 

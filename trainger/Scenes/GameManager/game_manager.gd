@@ -7,6 +7,7 @@ extends Node2D
 @onready var GameOverUI := $"../GameOver"
 @onready var PlayerBox := $"../PlayerBox"
 @onready var AudioManager := $"../AudioManager"
+@onready var DialogueBox := $"../DialogueBox"
 
 const MAX_FAILS := 3
 var current_fails := 0
@@ -62,6 +63,7 @@ func GameOver() -> void:
 	GameOverUI.visible = true
 	AudioManager.play_prompt_lose()
 	AudioManager.update_main_music_gameover()
+	DialogueBox.stop()
 	
 func ResetGame() -> void:
 	current_fails = 0
@@ -70,3 +72,4 @@ func ResetGame() -> void:
 	qteSpawnTimer.start(2) # Manually start the timer if Auto Start is off
 	AudioManager.update_main_music_reset()
 	AudioManager.play_restart()
+	DialogueBox.start()

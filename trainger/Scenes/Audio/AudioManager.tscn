@@ -9,20 +9,23 @@
 [ext_resource type="AudioStream" uid="uid://u2n4uqgxmbb3" path="res://Scenes/Audio/SourceFiles/SFX/UI_YouWin.ogg" id="4_kcgc6"]
 [ext_resource type="AudioStream" uid="uid://w5uxboygxqvm" path="res://Scenes/Audio/SourceFiles/SFX/UI_YouLose.ogg" id="5_paayw"]
 [ext_resource type="AudioStream" uid="uid://bko2a4rugwchl" path="res://Scenes/Audio/SourceFiles/Music/MX_Main_Rest.ogg" id="5_v1hhk"]
+[ext_resource type="AudioStream" uid="uid://chcykn4wt5dw6" path="res://Scenes/Audio/SourceFiles/Music/MX_Main_Drums.ogg" id="6_hs5kb"]
 [ext_resource type="AudioStream" uid="uid://21e5jofkt1r3" path="res://Scenes/Audio/SourceFiles/SFX/UI_Prompt_Failed.wav" id="8_v1hhk"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_anrdn"]
-stream_count = 5
+stream_count = 6
 stream_0/stream = ExtResource("3_4rpru")
-stream_0/volume = -60.0
+stream_0/volume = -12.0
 stream_1/stream = ExtResource("2_paayw")
-stream_1/volume = -11.29
+stream_1/volume = -60.0
 stream_2/stream = ExtResource("5_v1hhk")
 stream_2/volume = -60.0
 stream_3/stream = ExtResource("4_b5goh")
 stream_3/volume = -60.0
 stream_4/stream = ExtResource("4_2jrjh")
 stream_4/volume = -60.0
+stream_5/stream = ExtResource("6_hs5kb")
+stream_5/volume = -60.0
 
 [node name="AudioManager" type="Node" unique_id=195267624]
 
@@ -39,7 +42,7 @@ bus = &"MusicDiegetic"
 
 [node name="AMB_Office" type="AudioStreamPlayer" parent="SFX/Ambience" unique_id=230051897]
 stream = ExtResource("2_whaik")
-volume_db = -24.0
+volume_db = -26.0
 autoplay = true
 bus = &"Ambience"
 
@@ -68,5 +71,5 @@ bus = &"UI"
 
 [node name="UI_YouLose" type="AudioStreamPlayer" parent="SFX/UI" unique_id=683483499]
 stream = ExtResource("5_paayw")
-volume_db = -8.0
+volume_db = -10.0
 bus = &"UI"

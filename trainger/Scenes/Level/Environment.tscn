@@ -35,6 +35,7 @@ texture = ExtResource("5_fxsqg")
 offset = Vector2(30, 370)
 
 [node name="Sprite2D6" type="Sprite2D" parent="." unique_id=1065937110]
+visible = false
 z_index = -5
 position = Vector2(-29.20945, -370.86136)
 scale = Vector2(0.9992015, 1.0064411)

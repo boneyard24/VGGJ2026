@@ -30,8 +30,8 @@ func _ready() -> void:
 	"""
 	# Get the screen size (viewport dimensions) as a Vector2
 	var screen_size: Vector2 = get_viewport().get_visible_rect().size
-	screen_size = get_viewport_rect().size
-	screen_size = Cam2d.get_viewport().size
+	#screen_size = get_viewport_rect().size
+	#screen_size = Cam2d.get_viewport().size
 	
 	
 	# Generate random X and Y coordinates within the screen boundaries

@@ -11,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(960, 540)
 
 [node name="GameManager" parent="." unique_id=270048902 instance=ExtResource("1_r0du0")]
 
@@ -20,12 +21,13 @@ anchor_mode = 0
 
 [node name="CompTesting" parent="." unique_id=1638788144 instance=ExtResource("1_glv2v")]
 z_index = -9
+position = Vector2(960, 540)
 
 [node name="DialogueBox" parent="." unique_id=1743243020 instance=ExtResource("3_cm0pq")]
 layout_mode = 0
-offset_left = -400.0
-offset_top = 300.0
-offset_right = 440.0
-offset_bottom = 460.0
+offset_left = 557.0
+offset_top = 844.0
+offset_right = 1397.0
+offset_bottom = 1004.0
 grow_horizontal = 1
 grow_vertical = 1

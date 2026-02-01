@@ -18,13 +18,14 @@ var _timer_bar_progress := 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var ComboInputs = Globals.GenerateQTECombo(ComboLength)
 	var rng := RandomNumberGenerator.new()
 	var randTime := rng.randf_range(MinTime, MaxTime)
+	
 	
 	TimerBar.min_value = 0
 	TimerBar.max_value = randTime
 	
-	var ComboInputs = Globals.GenerateQTECombo(ComboLength)
 	
 	QTETimer.timeout.connect(_on_timer_timeout)
 	QTETimer.start(randTime) # Manually start the timer if Auto Start is off

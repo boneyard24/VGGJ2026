@@ -1,7 +1,11 @@
 class_name sprite_box_container
 extends HBoxContainer
 
-var cr : ColorRect
+@onready var up_texture : Texture2D = preload("res://Assets/Buttons/Button_Up.png")
+@onready var down_texture : Texture2D = preload("res://Assets/Buttons/Button_Down.png")
+@onready var left_texture : Texture2D = preload("res://Assets/Buttons/Button_Left.png")
+@onready var right_texture : Texture2D = preload("res://Assets/Buttons/Button_Right.png")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for child in get_children():
@@ -24,6 +28,7 @@ func MakeNewSprites(combo:Array[String]):
 		AddNewSprite(i)
 		
 func AddNewSprite(input:String):
+	"""
 	# 1. Create a new ColorRect instance
 	var my_color_rect := ColorRect.new()
 	my_color_rect.custom_minimum_size = Vector2(40, 40)
@@ -40,6 +45,25 @@ func AddNewSprite(input:String):
 		my_color_rect.color = Color(0.807, 0.002, 0.989, 1.0)
 	
 	add_child(my_color_rect)
+	"""
+	# 1. Create a new ColorRect instance
+	var my_texture_rect := TextureRect.new()
+	my_texture_rect.custom_minimum_size = Vector2(120, 120)
+	my_texture_rect.size_flags_horizontal = Control.SIZE_FILL
+	my_texture_rect.size_flags_vertical = Control.SIZE_FILL
+	my_texture_rect.expand_mode = TextureRect.EXPAND_FIT_WIDTH
+	my_texture_rect.stretch_mode = TextureRect.STRETCH_SCALE
+	
+	if (input == "up"):
+		my_texture_rect.texture = up_texture
+	elif (input == "down"):
+		my_texture_rect.texture = down_texture
+	elif (input == "left"):
+		my_texture_rect.texture = left_texture
+	elif (input == "right"):
+		my_texture_rect.texture = right_texture
+	
+	add_child(my_texture_rect)
 	
 func sbc_test():
 	print("SPRITE CONNECTED")

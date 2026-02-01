@@ -4,6 +4,7 @@ class_name qte_popup extends Node2D
 
 @onready var QTETimer : Timer = $QTETimer
 @onready var TimerBar : ProgressBar = $ProgressBar
+@onready var Cam2d : ProgressBar = $"Main/Camera2D"
 
 var MinTime := 1.0
 var MaxTime := 5.0
@@ -29,6 +30,9 @@ func _ready() -> void:
 	"""
 	# Get the screen size (viewport dimensions) as a Vector2
 	var screen_size: Vector2 = get_viewport().get_visible_rect().size
+	screen_size = get_viewport_rect().size
+	screen_size = Cam2d.get_viewport().size
+	
 	
 	# Generate random X and Y coordinates within the screen boundaries
 	# Use randf_range for floating-point positions, or randi_range for integer positions

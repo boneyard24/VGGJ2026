@@ -45,7 +45,7 @@ func _qte_result(eventSuccess: bool) -> void:
 	qteSpawnTimer.start(2)
 	
 	PlayerBox.event_result(eventSuccess)
-	AudioManager.play_main_music(current_fails)
+	AudioManager.update_main_music_qte(current_fails)
 
 	if (eventSuccess):
 		AudioManager.play_prompt_success()

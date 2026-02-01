@@ -1,5 +1,7 @@
 extends Panel
 
+signal dialogue_duration_calculated(duration: float)
+
 @onready var text_label: RichTextLabel = $DialogueText
 
 var boss_dialogue: Dictionary = {}
@@ -20,6 +22,7 @@ func _ready():
 
 	total_duration = calculate_boss_dialogue_duration()
 	print("Total Boss Dialogue Duration: ", total_duration)
+	dialogue_duration_calculated.emit(total_duration)
 
 	if boss_dialogue.is_empty():
 		push_warning("Boss dialogue is empty.")

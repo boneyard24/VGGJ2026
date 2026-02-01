@@ -4,9 +4,22 @@
 			"typing_speed": 0.07,
 			"line_wait_time": 3,
 			"lines": [
-				"Page 1 of [wave]text[/wave]",
-				"Page 2 of text: [shake]Electric Boogaloo[/shake]",
-                "And so on..."
+				"Good morning Finley, how was the weekend?",
+				"Great good to hear, you know it's good that the young bloods like you really take the time to enjoy life outside these walls, cause once we get you up to speed and chugging along you’ll realise just how good we have it here.",
+				"Gotta say I really like what you’re doing with that Kodama proposal. Lined it all up properly, what's the saying Swans on a Line? Eh doesn’t matter, words are expensive as it is. Only real nutters care about those sorta technicalities.",
+				"Couldn't tell you how often Gordon in accounting is trying to get me to realign on the morale groups bi-daily check in. Says it was supposed to be bi-quarterly and that I’m, “Wasting company time and valued resources”. Sounds like somebody's trying to derail my flow right? You get me?",
+				"Exactly! Good sport. Turns out management has an opening on the new Technical Realization and Incentive Negotiation division. heh , TRaIN. Gotta love the boys down in the Acronym Division. I’ve heard you're a bit of a trainspotter yourself, can’t say I ever understood the appeal.",
+				"Always more of a lover of analytics. You know I actually started in the Analytical Navigation of Universal Systems team before I switched tracks. Took a few long hard shifts with those guys back in the day. Always left you wanting more. Even if I was rocking the Caboose to that particular gang. My wife was always worried that I loved that team more than my own son",
+				"She was always saying, “Come home, spend time with your son. Tommy really wants to go fishing again” and that's all fine and well Brenda, but is Tommy ready to tackle the fiscal responsibilities of navigating the Analytical Navigation of Universal Systems team? Cause I don’t think this is something a ten year old can fire down the pipeline. Do you?",
+				"Course not! It takes years of learning real practical intuition to understand the complex and spirited world of analytics. Of course now I'm over with the Innovative Dissemination of Graphical And Fundamental team morale group. Hours are far better honestly.Though the work load is getting a little off the rails.",
+				"Take this Edwards proposal. We need to get it back on track. Like I'm always saying, a good business venture needs to stay straight and precise. Railroaded directly into that final station. We just need something to emulate, for Morale! Some sort of mechanical marvel that’s function is tied to precise clock work functionality. Oh what’s it called, the thing the Germans are always so proud of. You know what I'm talking about? Big, metal, lots of people, famously on time?",
+				"Oh right, Zeppelins. We really ought to run this company like the historically infallible Zeppelin enterprises. Sky high projections, Spirits lifted on beautiful ballasts of unstoppable hot air. Not like our current project structure. Running hither and thither, criss crossing all over the place. Some sort of nightmarish rats nest if you ask me. Might as well be shoveling coal.",
+				"Sorry, getting a little steamed here. I just care so much about efficient resource allocation. If only there was a practical solution we could pivot too. Possibly using preexisting infrastructure. Oh well. That dream has long since left the station. Kind of like my hopes for a holiday bonus this year. You know Mr.Topemhat has really been pushing those extra work hours. I could barely even sneak away this weekend.",
+				"Oh yes yes, I was saying earlier. Brenda and I took Tommy up to the lake over the weekend. Right over the old trestle bridge, just past the last spike way. I’m sure you’ve been up there at some point. Has the lake? And uh.. Trees? Where the wind tends to mention your darkest secrets in the voice of your third grade teacher? Yeah that's the one.",
+				"Anyways. I finally have the time to get all geared up and take Tommy fishing, so I pack up the family and drive all the way out there. Past the abandoned round house, over that decrepit bridge; Tommy and Linda were crying the whole time and begging me to turn back. I tell you, I can never seem to please those two.",
+				"Finally get to the lake, unhook the boat, unpack the fishing rods, load the tackle, get Tommy all situated in the boat. And Linda pipes up, “oh did you remember to bring the offering to ”. So of course. I leave Tommy tied down since the rituals already began, and run back into town to reach Ol’ man Henrys before he closes shop. And wouldn’t you know it. That dang ghost train is stuck on the trestle again. ",
+				"I tell you what Finley, Sometimes those old cursed Locomotives really know how to ruin your Sunday. I’m just glad I could get back before Tommy ended up on the wrong side of the tracks. It was a real pain to get that demon exercised last time, and honestly. I just don’t have the sick days left Ho ho.",
+				"Anyways, you’re a great team player Finley, you know how to let a guy let off some steam. Really engineering a good workplace environment. You really know how to conduct yourself around here. Keep at it youngin, and maybe one day you’ll be that captain of this ship of corporate efficiency."
 			]
 		},
 		"player": {
@@ -16,7 +29,17 @@
 				"lines": [
 					"Oh I see",
 					"Mhm",
-                	"Interesting"
+					"Interesting",
+					"You don't say",
+					"oh wow",
+					"Yeah",
+					"100%",
+					"Yep",
+					"Oh yeah, For sure",
+					"Crazy",
+					"Mathamtical",
+					"Catchphrase",
+					"I couldn't agree more",
 				]
 
 			},
@@ -24,10 +47,14 @@
 				"typing_speed": 0.05,
 				"line_wait_time": 3,
 				"lines": [
-					"[rainbow]Trains[/rainbow]",
-					"Trains?",
-					"TRAINS!",
-					"All aboard the train to failure!"
+					"[rainbow]When you add up all of the train tracks on Earth, you can travel to the moon and back almost twice[/rainbow]",
+					"The longest route for one train can be made between Moscow and Vladivostok on Trans-Siberian Express railway line that is 9,297 kilometers long. It covers nearly 8 time zones",
+					"There was a long standing internet rumour that roman roads impacted the design of train tracks in North America, which resulted in all sorts of funny issues with space travel. While this has proven false, theres plenty of other things to blame the Romans for!",
+					"All aboard the train to failure!",
+					"The heaviest train ever recorded weighted 95,000 tonnes! This freight train from Australia was 7.3 kilometers long and had the weight of 27 thousand fully grown elephants",
+					"The fastest train in the world was decided in 2015 when Japan’s L0 Series Maglev set a new world speed record, reaching an astonishing 375mph (603 km/h).",
+					"The longest train tunnel in the world is the Gotthard Base Tunnel in Switzerland. It stretches 35.5 miles (57 km) beneath the beautiful Swiss Alps",
+					"https://en.wikipedia.org/wiki/Steam_locomotive",
 				]
 			}
 		}

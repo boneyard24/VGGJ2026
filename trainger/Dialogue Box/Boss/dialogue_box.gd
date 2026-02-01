@@ -2,7 +2,7 @@ extends Panel
 
 @onready var text_label: RichTextLabel = $DialogueText
 
-var boss_dialogue: Array[String] = []
+var boss_dialogue: Dictionary = {}
 var current_line := 0
 
 var typing_speed := 0.0
@@ -10,44 +10,31 @@ var line_wait_time := 0.0
 
 func _ready():
 	boss_dialogue = load_dialogue_json("res://Dialogue Box/dialogue_data.json")
+
+	typing_speed = boss_dialogue.typing_speed
+	line_wait_time = boss_dialogue.line_wait_time
+
 	if boss_dialogue.is_empty():
+		push_warning("Boss dialogue is empty.")
 		return
 
 	start_dialogue()
 
-func load_dialogue_json(path: String) -> Array[String]:
+func load_dialogue_json(path: String) -> Dictionary:
 	var file := FileAccess.open(path, FileAccess.READ)
+
 	if file == null:
 		push_error("Failed to open dialogue file: " + path)
-		return []
+		return {}
 
 	var json_text := file.get_as_text()
-	var parsed = JSON.parse_string(json_text)
-	var lines : Array[String] = []
+	var json = JSON.parse_string(json_text)
 
-	if typeof(parsed) != TYPE_DICTIONARY:
-		push_error("Invalid JSON format in: " + path)
-		return []
-	
-	typing_speed = parsed["dialogue"]["boss"]["typing_speed"]
-	line_wait_time = parsed["dialogue"]["boss"]["line_wait_time"]
-
-	# Navigate to: dialogue → boss → lines
-	if parsed.has("dialogue") \
-	and parsed["dialogue"].has("boss") \
-	and parsed["dialogue"]["boss"].has("lines"):
-
-		var raw_lines = parsed["dialogue"]["boss"]["lines"]
-		for item in raw_lines:
-			lines.append(str(item))
-		return lines
-
-	push_error("Dialogue JSON missing boss lines: " + path)
-	return []
+	return json.dialogue.boss
 
 func start_dialogue():
 	current_line = 0
-	await show_line(boss_dialogue[current_line])
+	await show_line(boss_dialogue.lines[current_line])
 
 func show_line(text: String) -> void:
 	text_label.clear()
@@ -62,8 +49,8 @@ func show_line(text: String) -> void:
 func advance_line() -> void:
 	current_line += 1
 
-	if current_line < boss_dialogue.size():
-		await show_line(boss_dialogue[current_line])
+	if current_line < boss_dialogue.lines.size():
+		await show_line(boss_dialogue.lines[current_line])
 	else:
 		dialogue_finished()
 

@@ -4,6 +4,7 @@ extends Panel
 
 var boss_dialogue: Dictionary = {}
 var current_line := 0
+var current_full_text: String = ""
 
 var typing_speed := 0.0
 var line_wait_time := 0.0
@@ -11,6 +12,7 @@ var line_wait_time := 0.0
 var total_duration := 0.0
 
 func _ready():
+	text_label.bbcode_enabled = true
 	boss_dialogue = load_dialogue_json("res://Dialogue Box/dialogue_data.json")
 
 	typing_speed = boss_dialogue.typing_speed
@@ -42,11 +44,27 @@ func start_dialogue():
 	await show_line(boss_dialogue.lines[current_line])
 
 func show_line(text: String) -> void:
-	text_label.clear()
-
-	for ch in text:
-		text_label.append_text(ch)
+	current_full_text = ""
+	var visible_chars := 0
+	var i := 0
+	
+	while i < text.length():
+		# Check if we're at the start of a bbcode tag
+		if text[i] == '[':
+			var end_bracket := text.find(']', i)
+			if end_bracket != -1:
+				# Add the complete tag to current_full_text
+				current_full_text += text.substr(i, end_bracket - i + 1)
+				i = end_bracket + 1
+				text_label.text = current_full_text
+				continue
+		
+		# Regular character - add it and increment visible char count
+		current_full_text += text[i]
+		visible_chars += 1
+		text_label.text = current_full_text
 		await get_tree().create_timer(typing_speed).timeout
+		i += 1
 
 	await get_tree().create_timer(line_wait_time).timeout
 	await advance_line()

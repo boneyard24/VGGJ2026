@@ -2,16 +2,13 @@
 
 [ext_resource type="Script" uid="uid://c5i7nadqgsty4" path="res://Dialogue Box/Player/player_dialogue.gd" id="1_8dn7x"]
 
-[node name="Game" type="Node2D" unique_id=1743243020]
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1335453006]
-
-[node name="DialogueBox" type="Panel" parent="CanvasLayer" unique_id=1367545682]
-offset_right = 607.0
-offset_bottom = 224.0
+[node name="PlayerBox" type="Panel" unique_id=344526282]
+custom_minimum_size = Vector2(840, 160)
+offset_right = 840.0
+offset_bottom = 160.0
 script = ExtResource("1_8dn7x")
 
-[node name="DialogueText" type="RichTextLabel" parent="CanvasLayer/DialogueBox" unique_id=1924625265]
+[node name="DialogueText" type="RichTextLabel" parent="." unique_id=1924625265]
 custom_minimum_size = Vector2(600, 200)
 layout_mode = 0
 offset_right = 606.0

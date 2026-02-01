@@ -16,8 +16,9 @@ func _ready():
 	#timer.wait_time = combo_window
 	#timer.one_shot = true
 	
-func Setup(combo_length: int):
-	SPECIAL_MOVE = Globals.GenerateQTECombo(combo_length)
+func Setup(combo: Array[String]):
+	#SPECIAL_MOVE = Globals.GenerateQTECombo(combo_length)
+	SPECIAL_MOVE = combo
 	input_tracking = true
 	
 

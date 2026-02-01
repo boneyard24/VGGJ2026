@@ -3,6 +3,7 @@ extends Node2D
 @onready var progress_train: Sprite2D = $ProgressTrain
 var dialogue_duration: float = 0.0
 var velocity: float = 0.0
+var game_over := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,15 +16,22 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if velocity > 0:
-		progress_train.position.x += velocity * delta
-		# Stop when train reaches the end of the display
-		if progress_train.position.x >= get_viewport().get_visible_rect().size.x - progress_train.texture.get_width():
-			velocity = 0
+	if !game_over:
+		if velocity > 0:
+			progress_train.position.x += velocity * delta
+			# Stop when train reaches the end of the display
+			if progress_train.position.x >= get_viewport().get_visible_rect().size.x - progress_train.texture.get_width():
+				velocity = 0
 
 func UpdateProgress(_progressChange: float):
 	pass
 
+func stop() -> void:
+	game_over = true
+
+func start() -> void:
+	game_over = false
+	progress_train.position.x = 0
 
 func _on_dialogue_box_dialogue_duration_calculated(duration: float) -> void:
 	dialogue_duration = duration

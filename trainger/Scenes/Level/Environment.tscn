@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://debt7kpxmr02j"]
 
 [ext_resource type="Texture2D" uid="uid://c0gtwfgcsq338" path="res://Assets/comptesting/0_Background_CityView@0.5x.png" id="1_s0iwy"]
-[ext_resource type="Texture2D" uid="uid://csg8ys1ugxequ" path="res://Assets/comptesting/2_Background_Office@0.5x.png" id="2_aftjl"]
-[ext_resource type="Texture2D" uid="uid://c8604kotlcmir" path="res://Assets/comptesting/5_Foreground@0.5x.png" id="3_c5jlw"]
-[ext_resource type="Texture2D" uid="uid://cw0f84wgsa37i" path="res://Assets/DialogueBoxes/Boss_TextBox@0.5x_Cropped.png" id="4_c5jlw"]
+[ext_resource type="Texture2D" uid="uid://d2ngm8wrx2a24" path="res://Assets/BGs/2_Background_Office@0.5x@0.5x.png" id="2_c5jlw"]
+[ext_resource type="Texture2D" uid="uid://bp4js5csvlk3y" path="res://Assets/BGs/5_Foreground@0.5x@0.5x.png" id="3_40one"]
+[ext_resource type="Texture2D" uid="uid://y1m5hkuna35o" path="res://Assets/DialogueBoxes/TextBox_YourBoss.png" id="4_40one"]
+[ext_resource type="Texture2D" uid="uid://clhvu5045hht6" path="res://Assets/DialogueBoxes/TextBox_You.png" id="5_fxsqg"]
+[ext_resource type="Texture2D" uid="uid://dka3kit61gqlb" path="res://Assets/Railroad/6_RailroadBar@0.5x@0.5x.png" id="6_fxsqg"]
 
 [node name="Environment" type="Node2D" unique_id=1706885947]
+z_index = -1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=765936477]
 z_index = -9
@@ -13,13 +16,27 @@ texture = ExtResource("1_s0iwy")
 
 [node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1804971191]
 z_index = -9
-texture = ExtResource("2_aftjl")
+texture = ExtResource("2_c5jlw")
 
 [node name="Sprite2D3" type="Sprite2D" parent="." unique_id=216783328]
 z_index = -5
-texture = ExtResource("3_c5jlw")
+texture = ExtResource("3_40one")
 
 [node name="Sprite2D4" type="Sprite2D" parent="." unique_id=211974807]
+z_index = -4
+texture = ExtResource("4_40one")
+offset = Vector2(30, 370)
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=1534141096]
 z_index = -5
-texture = ExtResource("4_c5jlw")
+position = Vector2(-480.00003, -494)
+scale = Vector2(0.6585665, 0.65856653)
+texture = ExtResource("5_fxsqg")
+offset = Vector2(30, 370)
+
+[node name="Sprite2D6" type="Sprite2D" parent="." unique_id=1065937110]
+z_index = -5
+position = Vector2(-29.20945, -370.86136)
+scale = Vector2(0.9992015, 1.0064411)
+texture = ExtResource("6_fxsqg")
 offset = Vector2(30, 370)

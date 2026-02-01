@@ -2,17 +2,21 @@
 
 [ext_resource type="Script" uid="uid://c5i7nadqgsty4" path="res://Dialogue Box/Player/player_dialogue.gd" id="1_8dn7x"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8dn7x"]
+
 [node name="PlayerBox" type="Panel" unique_id=344526282]
-custom_minimum_size = Vector2(320, 200)
-offset_right = 320.0
-offset_bottom = 200.0
+custom_minimum_size = Vector2(360, 160)
+offset_right = 360.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8dn7x")
 script = ExtResource("1_8dn7x")
 
 [node name="DialogueText" type="RichTextLabel" parent="." unique_id=1924625265]
-custom_minimum_size = Vector2(320, 200)
+custom_minimum_size = Vector2(360, 160)
 layout_mode = 0
-offset_right = 320.0
-offset_bottom = 200.0
+offset_right = 360.0
+offset_bottom = 160.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "test [wave] aasdsd [/wave]"

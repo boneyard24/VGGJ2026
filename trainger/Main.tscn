@@ -31,31 +31,31 @@ anchor_mode = 0
 
 [node name="DialogueBox" parent="." unique_id=1743243020 instance=ExtResource("3_cm0pq")]
 layout_mode = 0
-offset_left = 571.0
-offset_top = 843.0
-offset_right = 1391.0
-offset_bottom = 993.0
+offset_left = 513.0
+offset_top = 841.0
+offset_right = 1433.0
+offset_bottom = 1011.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="PlayerBox" parent="." unique_id=344526282 instance=ExtResource("4_fos0i")]
 z_index = -5
 layout_mode = 0
-offset_left = 349.0
-offset_top = 158.0
-offset_right = 669.0
-offset_bottom = 358.0
+offset_left = 302.0
+offset_top = 217.0
+offset_right = 662.0
+offset_bottom = 377.0
 
 [node name="GameOver" parent="." unique_id=1274482844 instance=ExtResource("4_cm0pq")]
 layout_mode = 1
 
 [node name="Boss" parent="." unique_id=1345478661 instance=ExtResource("7_trn2v")]
 z_index = -5
-position = Vector2(1277, 509)
+position = Vector2(1277, 520)
 
 [node name="Player" parent="." unique_id=519405507 instance=ExtResource("8_03owx")]
 z_index = -5
-position = Vector2(790, 490)
+position = Vector2(790, 505)
 
 [node name="TensionProgressBar" parent="." unique_id=1740585256 instance=ExtResource("9_03owx")]
 

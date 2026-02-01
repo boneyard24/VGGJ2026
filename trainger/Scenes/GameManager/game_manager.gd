@@ -33,8 +33,8 @@ func SpawnQTE() -> void:
 	var instance : qte_popup = QTEScene.instantiate()
 	
 	var rng := RandomNumberGenerator.new()
-	var combo_count := rng.randi_range(1, (1+spawn_count) / 2)
-	combo_count = clampi(combo_count, 1, 4)
+	var combo_count := rng.randi_range(1, (1+spawn_count) / 4)
+	combo_count = clampi(combo_count, 1, 6)
 	instance.ComboLength = combo_count
 	
 	add_child(instance)

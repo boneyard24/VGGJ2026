@@ -8,7 +8,6 @@ extends Node2D
 @onready var PlayerBox := $"../PlayerBox"
 @onready var AudioManager := $"../AudioManager"
 
-
 const MAX_FAILS := 3
 var current_fails := 0
 var spawn_count := 0
@@ -64,5 +63,5 @@ func GameOver() -> void:
 func ResetGame() -> void:
 	current_fails = 0
 	GameOverUI.visible = false
-
+	spawn_count = 0
 	qteSpawnTimer.start(2) # Manually start the timer if Auto Start is off

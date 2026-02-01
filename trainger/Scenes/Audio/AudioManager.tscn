@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dbebq51rari4e"]
 
+[ext_resource type="Script" uid="uid://qrk2k7h027ku" path="res://Scenes/Audio/audio_manager.gd" id="1_hs5kb"]
 [ext_resource type="AudioStream" uid="uid://dao0v2aljrmy3" path="res://Scenes/Audio/SourceFiles/Music/MX_Main_FullStem_Futz.ogg" id="2_paayw"]
 [ext_resource type="AudioStream" uid="uid://b6rc3qwe1uv62" path="res://Scenes/Audio/SourceFiles/SFX/AMB_Office_01.ogg" id="2_whaik"]
 [ext_resource type="AudioStream" uid="uid://b4pjsem0elhqw" path="res://Scenes/Audio/SourceFiles/Music/MX_Main_FullStem_NoFX.ogg" id="3_4rpru"]
@@ -28,6 +29,7 @@ stream_5/stream = ExtResource("6_hs5kb")
 stream_5/volume = -60.0
 
 [node name="AudioManager" type="Node" unique_id=195267624]
+script = ExtResource("1_hs5kb")
 
 [node name="Music" type="Node" parent="." unique_id=2043761988]
 

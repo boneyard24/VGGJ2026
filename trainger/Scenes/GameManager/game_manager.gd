@@ -6,6 +6,7 @@ extends Node2D
 @onready var QTEScene = preload("res://Scenes/QTE/QTEPopup.tscn")
 @onready var GameOverUI := $"../GameOver"
 @onready var PlayerBox := $"../PlayerBox"
+@onready var AudioManager := $"../AudioManager"
 
 
 const MAX_FAILS := 3
@@ -36,6 +37,7 @@ func SpawnQTE() -> void:
 	
 	add_child(instance)
 	instance.qte_popup_complete.connect(_qte_result)
+	AudioManager.play_prompt_popup()
 	
 
 func _qte_result(eventSuccess: bool) -> void:
@@ -43,14 +45,18 @@ func _qte_result(eventSuccess: bool) -> void:
 	qteSpawnTimer.start(2)
 	
 	PlayerBox.event_result(eventSuccess)
-	
-	if (!eventSuccess):
+
+	if (eventSuccess):
+		AudioManager.play_prompt_success()
+	else:
+		AudioManager.play_prompt_failed()
 		current_fails += 1
 		if (current_fails >= MAX_FAILS):
 			GameOver()
 	
 func GameOver() -> void:
 	print("GM: GAMEOVER GAMEOVER GAMEOVER GAMEOVER GAMEOVER")
+	AudioManager.play_prompt_lose()
 	qteSpawnTimer.stop()
 	GameOverUI.visible = true
 	

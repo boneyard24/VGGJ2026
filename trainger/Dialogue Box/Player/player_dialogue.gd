@@ -2,10 +2,7 @@ extends Panel
 
 @onready var text_label: RichTextLabel = $DialogueText
 
-enum { SUCCESS, FAILURE }
-var success_dialogue: Array[String] = []
-
-
+var player_dialogue: Dictionary = {}
 
 var success_current_line := 0
 var success_typing_speed := 0.0
@@ -16,63 +13,50 @@ var failure_typing_speed := 0.0
 var failure_line_wait_time := 0.0
 
 func _ready():
-	success_dialogue = load_dialogue_json("res://Dialogue Box/dialogue_data.json")
-	if success_dialogue.is_empty():
+	
+	text_label.clear()
+
+	player_dialogue = load_dialogue_json("res://Dialogue Box/dialogue_data.json")
+
+	success_typing_speed = player_dialogue.success.typing_speed
+	success_line_wait_time = player_dialogue.success.line_wait_time
+
+	failure_typing_speed = player_dialogue.failure.typing_speed
+	failure_line_wait_time = player_dialogue.failure.line_wait_time
+
+	if player_dialogue.is_empty():
+		push_warning("Player dialogue is empty.")
 		return
 
-	start_dialogue()
+	# TODO: Catch whatever event triggers success or failure dialogue
+	await send_success_dialogue()
+	await send_failure_dialogue()
 
-func load_dialogue_json(path: String) -> Array[String]:
+func load_dialogue_json(path: String) -> Dictionary:
 	var file := FileAccess.open(path, FileAccess.READ)
+
 	if file == null:
 		push_error("Failed to open dialogue file: " + path)
-		return []
+		return {}
 
 	var json_text := file.get_as_text()
-	var parsed = JSON.parse_string(json_text)
-	var lines : Array[String] = []
+	var json = JSON.parse_string(json_text)
 
-	if typeof(parsed) != TYPE_DICTIONARY:
-		push_error("Invalid JSON format in: " + path)
-		return []
-	
-	success_typing_speed = parsed["dialogue"]["player"]["success"]["typing_speed"]
-	success_line_wait_time = parsed["dialogue"]["player"]["success"]["line_wait_time"]
+	return json.dialogue.player
 
-	# Navigate to: dialogue → boss → lines
-	if parsed.has("dialogue") \
-	and parsed["dialogue"].has("boss") \
-	and parsed["dialogue"]["boss"].has("lines"):
+func send_success_dialogue():
+	await show_line(player_dialogue.success.lines[success_current_line], success_typing_speed, success_line_wait_time)
+	success_current_line += 1
 
-		var raw_lines = parsed["dialogue"]["boss"]["lines"]
-		for item in raw_lines:
-			lines.append(str(item))
-		return lines
+func send_failure_dialogue():
+	await show_line(player_dialogue.failure.lines[failure_current_line], failure_typing_speed, failure_line_wait_time)
+	failure_current_line += 1
 
-	push_error("Dialogue JSON missing boss lines: " + path)
-	return []
-
-func start_dialogue():
-	success_current_line = 0
-	await show_line(success_dialogue[success_current_line])
-
-func show_line(text: String) -> void:
-	text_label.clear()
+func show_line(text: String, typing_speed: float, line_wait_time: float) -> void:
 
 	for ch in text:
 		text_label.append_text(ch)
-		await get_tree().create_timer(success_typing_speed).timeout
+		await get_tree().create_timer(typing_speed).timeout
 
-	await get_tree().create_timer(success_line_wait_time).timeout
-	await advance_line()
-
-func advance_line() -> void:
-	success_current_line += 1
-
-	if success_current_line < success_dialogue.size():
-		await show_line(success_dialogue[success_current_line])
-	else:
-		dialogue_finished()
-
-func dialogue_finished():
-	print("Dialogue complete.")
+	await get_tree().create_timer(line_wait_time).timeout
+	text_label.clear()

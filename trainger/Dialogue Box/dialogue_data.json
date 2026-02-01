@@ -13,7 +13,7 @@
 			"success": {
 				"typing_speed": 0.07,
 				"line_wait_time": 3,
-				"line": [
+				"lines": [
 					"Oh I see",
 					"Mhm",
                 	"Interesting"
@@ -23,7 +23,7 @@
 			"failure": {
 				"typing_speed": 0.05,
 				"line_wait_time": 3,
-				"train_reply": [
+				"lines": [
 					"Trains",
 					"Trains?",
 					"TRAINS!",

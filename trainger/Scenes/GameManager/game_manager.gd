@@ -5,6 +5,9 @@ extends Node2D
 #const QTEScene: PackedScene = preload("res://Scenes/QTE/QTEPopup.tscn")
 @onready var QTEScene = preload("res://Scenes/QTE/QTEPopup.tscn")
 
+const MAX_FAILS := 3
+var current_fails := 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	qteSpawnTimer.timeout.connect(SpawnQTE)
@@ -29,3 +32,14 @@ func _qte_result(eventSuccess: bool) -> void:
 	print("GM: Event Success - ", eventSuccess)
 	qteSpawnTimer.start(2)
 	
+	if (!eventSuccess):
+		current_fails += 1
+		if (current_fails >= MAX_FAILS):
+			GameOver()
+	
+func GameOver() -> void:
+	print("GM: GAMEOVER GAMEOVER GAMEOVER GAMEOVER GAMEOVER")
+	qteSpawnTimer.stop()
+	
+func ResetGame() -> void:
+	pass

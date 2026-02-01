@@ -1,14 +1,9 @@
 [gd_scene format=3 uid="uid://i2gfvcoqkjtr"]
 
 [ext_resource type="Script" uid="uid://b1vfu32xf1p07" path="res://coreytest/coreytest.gd" id="1_7qaf8"]
-[ext_resource type="PackedScene" uid="uid://b0quagujfn8r8" path="res://Scenes/GameManager/GameManager.tscn" id="2_xghbe"]
-[ext_resource type="PackedScene" uid="uid://cl7fsjf2d4taa" path="res://Dialogue Box/Boss/DialogueBox.tscn" id="3_tuayy"]
+[ext_resource type="PackedScene" uid="uid://bj0jc0ucnv8l6" path="res://Main.tscn" id="2_7qaf8"]
 
-[node name="Coreytestscene" type="Node2D" unique_id=1406705118 node_paths=PackedStringArray("QTEPOP", "progBar")]
+[node name="Coreytestscene" type="Node2D" unique_id=1406705118]
 script = ExtResource("1_7qaf8")
-QTEPOP = NodePath("")
-progBar = NodePath("")
 
-[node name="GameManager" parent="." unique_id=270048902 instance=ExtResource("2_xghbe")]
-
-[node name="Game" parent="." unique_id=1743243020 instance=ExtResource("3_tuayy")]
+[node name="Main" parent="." unique_id=922461951 instance=ExtResource("2_7qaf8")]

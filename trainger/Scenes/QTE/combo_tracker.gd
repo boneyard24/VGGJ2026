@@ -1,5 +1,7 @@
 extends Node
 
+signal combo_result(eventSuccess : bool)
+
 var input_buffer = []
 var combo_window = 0.5 # Seconds allowed between inputs
 var input_tracking := false
@@ -22,6 +24,10 @@ func _unhandled_input(event):
 			add_to_combo("up")
 		elif event.is_action_pressed("down"):
 			add_to_combo("down")
+		elif event.is_action_pressed("left"):
+			add_to_combo("left")
+		elif event.is_action_pressed("right"):
+			add_to_combo("right")
 
 func add_to_combo(action_name):
 	input_buffer.append(action_name)
@@ -41,12 +47,13 @@ func check_combo():
 	
 	if input_buffer == SPECIAL_MOVE:
 		combo_end(true, "CORRECT!")
-		input_buffer.clear()
 		#timer.stop()
 
 func combo_end(success:bool, msg:String):
 	input_tracking = false
+	input_buffer.clear()
 	print("COMBO RESULT: ", success, " : ", msg)
+	combo_result.emit(success)
 	
 	
 #func _on_timer_timeout():

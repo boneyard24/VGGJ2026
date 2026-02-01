@@ -1,17 +1,17 @@
 class_name qte_popup extends Node2D
 
 #todo: stop the progress bar on success
+signal qte_popup_complete(eventSuccess : bool)
 
 @onready var QTETimer : Timer = $QTETimer
 @onready var TimerBar : ProgressBar = $ProgressBar
-@onready var Cam2d : ProgressBar = $"Main/Camera2D"
+@onready var ComboTracker : Node = $ComboTracker
 
 var MinTime := 1.0
 var MaxTime := 5.0
 
 var _timer_bar_progress := 0.0
 
-signal qte_popup_complete(eventSuccess : bool)
 #@onready var timer: Timer = $Timer # Reference the Timer node
 
 # Called when the node enters the scene tree for the first time.
@@ -24,6 +24,8 @@ func _ready() -> void:
 	
 	QTETimer.timeout.connect(_on_timer_timeout)
 	QTETimer.start(randTime) # Manually start the timer if Auto Start is off
+	
+	ComboTracker.combo_result.connect(end_qte)
 	
 	"""
 	#Random Screen Position Segment
@@ -68,6 +70,8 @@ func update_progress_bar(delta: float):
 	_timer_bar_progress += delta
 	TimerBar.value = _timer_bar_progress
 	
+	
 func end_qte(successful: bool):
+	QTETimer.stop()
 	qte_popup_complete.emit(successful)
 	queue_free()

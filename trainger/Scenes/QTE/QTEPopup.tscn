@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cc7om3ba06g5i" path="res://Scenes/QTE/SpriteBoxContainer/SpriteBoxContainer.tscn" id="3_yvlxk"]
 
 [node name="QtePopup" type="Node2D" unique_id=1741924764]
-z_index = -1
+z_index = 1
 script = ExtResource("1_ng8vx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2106237570]

@@ -44,12 +44,12 @@ func _qte_result(eventSuccess: bool) -> void:
 	qteSpawnTimer.start(2)
 	
 	PlayerBox.event_result(eventSuccess)
-	AudioManager.update_main_music_qte(current_fails)
 
 	if (eventSuccess):
 		AudioManager.play_prompt_success()
 	else:
 		AudioManager.play_prompt_failed()
+		AudioManager.update_main_music_qte(current_fails)
 		current_fails += 1
 		if (current_fails >= MAX_FAILS):
 			GameOver()
@@ -59,9 +59,11 @@ func GameOver() -> void:
 	qteSpawnTimer.stop()
 	GameOverUI.visible = true
 	AudioManager.play_prompt_lose()
+	AudioManager.update_main_music_gameover()
 	
 func ResetGame() -> void:
 	current_fails = 0
 	GameOverUI.visible = false
 	spawn_count = 0
 	qteSpawnTimer.start(2) # Manually start the timer if Auto Start is off
+	AudioManager.update_main_music_reset()

@@ -19,9 +19,12 @@ var _timer_bar_progress := 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var ComboInputs = Globals.GenerateQTECombo(ComboLength)
+	
+	var timeMod : float = ComboLength / 3
 	var rng := RandomNumberGenerator.new()
 	var randTime := rng.randf_range(MinTime, MaxTime)
 	
+	randTime += timeMod
 	
 	TimerBar.min_value = 0
 	TimerBar.max_value = randTime
@@ -35,6 +38,8 @@ func _ready() -> void:
 	
 	SpriteBoxContainer.MakeNewSprites(ComboInputs)
 	
+	var xBuffer : float = ComboLength * 70
+	var yBuffer : float = 150.0
 	
 	"""
 	#Random Screen Position Segment
@@ -48,9 +53,9 @@ func _ready() -> void:
 	# Generate random X and Y coordinates within the screen boundaries
 	# Use randf_range for floating-point positions, or randi_range for integer positions
 	var rand_x: float = rng.randf_range(0, screen_size.x)
-	rand_x = clamp(rand_x, 100, screen_size.x-100)
+	rand_x = clamp(rand_x, xBuffer, screen_size.x-xBuffer)
 	var rand_y: float = rng.randf_range(0, screen_size.y)
-	rand_y = clamp(rand_y, 100, screen_size.y-100)
+	rand_y = clamp(rand_y, yBuffer, screen_size.y-yBuffer)
 	
 	# Create a new random position vector
 	var random_position: Vector2 = Vector2(rand_x, rand_y)

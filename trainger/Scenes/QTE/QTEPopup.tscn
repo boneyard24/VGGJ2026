@@ -21,17 +21,15 @@ offset_right = 108.0
 offset_bottom = -1.31913
 theme_override_styles/panel = SubResource("StyleBoxFlat_1c3dc")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2106237570]
-
 [node name="QTETimer" type="Timer" parent="." unique_id=1801738351]
 one_shot = true
 autostart = true
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1767744681]
-offset_left = -88.0
-offset_top = -31.0
-offset_right = 92.0
-offset_bottom = -1.0
+offset_left = -110.0
+offset_top = -16.0
+offset_right = 110.0
+offset_bottom = -6.0
 theme_override_styles/fill = SubResource("StyleBoxFlat_yvlxk")
 show_percentage = false
 
@@ -40,8 +38,8 @@ script = ExtResource("2_1asnj")
 
 [node name="SpriteBoxContainer" parent="." unique_id=1093026482 instance=ExtResource("3_yvlxk")]
 offset_left = -126.0
-offset_top = -134.0
+offset_top = -107.0
 offset_right = 126.0
-offset_bottom = -74.0
+offset_bottom = -47.0
 size_flags_horizontal = 4
 size_flags_vertical = 4

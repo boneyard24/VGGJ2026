@@ -10,6 +10,8 @@ extends HBoxContainer
 func _ready() -> void:
 	for child in get_children():
 		child.queue_free()
+		
+	
 	#MakeSprites(5)
 	#pass # Replace with function body.
 

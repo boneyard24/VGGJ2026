@@ -12,7 +12,6 @@ func _ready() -> void:
 	var dialogue_box = get_tree().root.get_node("Main/DialogueBox")
 	print("Rail length calculated: ", rail_length)
 	if dialogue_box:
-		dialogue_box.dialogue_duration_calculated.connect(_on_dialogue_box_dialogue_duration_calculated)
 		calculate_velocity()
 	else:
 		push_warning("Could not find dialogue box node")

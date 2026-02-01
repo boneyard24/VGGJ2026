@@ -67,3 +67,4 @@ func ResetGame() -> void:
 	spawn_count = 0
 	qteSpawnTimer.start(2) # Manually start the timer if Auto Start is off
 	AudioManager.update_main_music_reset()
+	AudioManager.play_restart()

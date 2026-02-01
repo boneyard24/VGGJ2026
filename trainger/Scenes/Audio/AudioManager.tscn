@@ -52,18 +52,18 @@ bus = &"Ambience"
 
 [node name="UI_Prompt_PopUp" type="AudioStreamPlayer" parent="SFX/UI" unique_id=930698171]
 stream = ExtResource("3_anrdn")
-volume_db = -8.0
+volume_db = -12.0
 pitch_scale = 2.71
 bus = &"UI"
 
 [node name="UI_Prompt_Success" type="AudioStreamPlayer" parent="SFX/UI" unique_id=764298818]
 stream = ExtResource("3_anrdn")
-volume_db = -5.0
+volume_db = -8.0
 bus = &"UI"
 
 [node name="UI_Prompt_Failed" type="AudioStreamPlayer" parent="SFX/UI" unique_id=452935476]
 stream = ExtResource("8_v1hhk")
-volume_db = -5.0
+volume_db = -6.0
 bus = &"UI"
 
 [node name="UI_YouWin" type="AudioStreamPlayer" parent="SFX/UI" unique_id=75074421]
@@ -73,5 +73,11 @@ bus = &"UI"
 
 [node name="UI_YouLose" type="AudioStreamPlayer" parent="SFX/UI" unique_id=683483499]
 stream = ExtResource("5_paayw")
-volume_db = -10.0
+volume_db = -12.0
+bus = &"UI"
+
+[node name="UI_Prompt_Text" type="AudioStreamPlayer" parent="SFX/UI" unique_id=951375049]
+stream = ExtResource("3_anrdn")
+volume_db = -2.0
+pitch_scale = 4.21
 bus = &"UI"

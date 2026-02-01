@@ -12,6 +12,7 @@ const fails_stage2 = 1
 @onready var ui_prompt_failed: AudioStreamPlayer = $SFX/UI/UI_Prompt_Failed
 @onready var ui_prompt_win: AudioStreamPlayer = $SFX/UI/UI_YouWin
 @onready var ui_prompt_lose: AudioStreamPlayer = $SFX/UI/UI_YouLose
+@onready var ui_prompt_text: AudioStreamPlayer = $SFX/UI/UI_Prompt_Text
 
 func play_prompt_popup() -> void:
 	ui_prompt_popup.play()
@@ -28,7 +29,13 @@ func play_prompt_win() -> void:
 func play_prompt_lose() -> void:
 	ui_prompt_lose.play()
 
-
+func play_prompt_text() -> void:
+	ui_prompt_text.play()
+	
+func play_restart() -> void:
+	ui_prompt_lose.stop()
+	ui_prompt_win.stop()
+	
 # MUSIC MIX SNAPSHOTS
 
 func music_stage_begin():

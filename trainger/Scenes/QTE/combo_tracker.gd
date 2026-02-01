@@ -8,13 +8,16 @@ var input_tracking := false
 #@onready var timer = $Timer
 
 # Predefined combos
-const SPECIAL_MOVE = ["up", "down"]
+var SPECIAL_MOVE : Array[String]
 const INPUT_OPTIONS = ["up", "down", "left", "right"]
 
 func _ready():
+	pass
 	#timer.wait_time = combo_window
 	#timer.one_shot = true
 	
+func Setup(combo_length: int):
+	SPECIAL_MOVE = Globals.GenerateQTECombo(combo_length)
 	input_tracking = true
 	
 
@@ -35,6 +38,8 @@ func add_to_combo(action_name):
 	check_combo()
 	
 func check_combo():
+	print("INPUTBUFFER: ", input_buffer.size())
+	print("SPECIAL_MOVE: ", SPECIAL_MOVE.size())
 	if input_buffer.size() > SPECIAL_MOVE.size():
 		combo_end(false, "TOO MANY INPUTS!")
 	

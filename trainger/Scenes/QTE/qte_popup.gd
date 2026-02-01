@@ -28,6 +28,7 @@ func _ready() -> void:
 	QTETimer.start(randTime) # Manually start the timer if Auto Start is off
 	
 	ComboTracker.combo_result.connect(end_qte)
+	ComboTracker.Setup(ComboLength)
 	
 	
 	"""
@@ -64,12 +65,6 @@ func _on_timer_timeout():
 	end_qte(false)
 	# You can restart the timer here if not One Shot:
 	# timer.start() 
-	
-func _input(event: InputEvent) -> void:
-	if (event.is_action_released("ui_left", true)) :
-		QTETimer.stop() #stop the timer
-		print("QTE_POPUP TIMER COMPLETED! SUCCESS")
-		end_qte(true)
 	
 func update_progress_bar(delta: float):
 	_timer_bar_progress += delta

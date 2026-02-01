@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cr1nswdvn84t4" path="res://Scenes/GameOver/GameOver.tscn" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://c1o4crbloc3vm" path="res://Dialogue Box/Player/PlayerDialogue.tscn" id="4_fos0i"]
 [ext_resource type="PackedScene" uid="uid://dbebq51rari4e" path="res://Scenes/Audio/AudioManager.tscn" id="6_3dxm6"]
+[ext_resource type="PackedScene" uid="uid://sa6jfqdpuxdu" path="res://Entities/Boss/Boss.tscn" id="7_trn2v"]
+[ext_resource type="PackedScene" uid="uid://csrex37lsgvxe" path="res://Entities/Player/Player.tscn" id="8_03owx"]
 
 [node name="Main" type="Control" unique_id=922461951]
 layout_mode = 3
@@ -36,6 +38,7 @@ grow_horizontal = 1
 grow_vertical = 1
 
 [node name="PlayerBox" parent="." unique_id=344526282 instance=ExtResource("4_fos0i")]
+z_index = -5
 layout_mode = 0
 offset_left = 61.0
 offset_top = 180.0
@@ -46,3 +49,9 @@ offset_bottom = 340.0
 layout_mode = 1
 
 [node name="AudioManager" parent="." unique_id=195267624 instance=ExtResource("6_3dxm6")]
+
+[node name="Boss" parent="." unique_id=1345478661 instance=ExtResource("7_trn2v")]
+position = Vector2(1277, 509)
+
+[node name="Player" parent="." unique_id=519405507 instance=ExtResource("8_03owx")]
+position = Vector2(790, 490)

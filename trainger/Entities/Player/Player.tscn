@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://csrex37lsgvxe"]
 
-[ext_resource type="Texture2D" uid="uid://d30muetojko4s" path="res://icon.svg" id="1_e5kic"]
 [ext_resource type="Script" uid="uid://d2ytlex3aamt" path="res://Entities/Player/player.gd" id="1_ww0jn"]
+[ext_resource type="Texture2D" uid="uid://cau3od4602axa" path="res://Assets/Player/PlayerCharacter@0.5x_Idle.png" id="2_ww0jn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u36tg"]
-size = Vector2(128, 128)
+size = Vector2(248, 646)
 
 [sub_resource type="Animation" id="Animation_e5kic"]
 length = 0.001
@@ -23,7 +23,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ww0jn"]
 resource_name = "shake"
-length = 0.2
+length = 0.001
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -44,15 +44,18 @@ _data = {
 &"shake": SubResource("Animation_ww0jn")
 }
 
-[node name="Player" type="AnimatableBody2D" unique_id=696920407]
+[node name="Player" type="Node2D" unique_id=519405507]
+z_index = -1
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=696920407]
 position = Vector2(10, 0)
 script = ExtResource("1_ww0jn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=345029254]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=345029254]
 shape = SubResource("RectangleShape2D_u36tg")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1757642543]
-texture = ExtResource("1_e5kic")
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=1757642543]
+texture = ExtResource("2_ww0jn")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=535852127]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatableBody2D" unique_id=535852127]
 libraries/ = SubResource("AnimationLibrary_vweq0")

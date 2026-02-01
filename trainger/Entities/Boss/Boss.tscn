@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://sa6jfqdpuxdu"]
+
+[ext_resource type="Texture2D" uid="uid://c8dcp028am0n1" path="res://Assets/Boss/BossCharacter@0.5x_Idle.png" id="1_fef3c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ye7d0"]
+size = Vector2(376, 550)
+
+[node name="Boss" type="Node2D" unique_id=1345478661]
+z_index = -1
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=526382224]
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=732324413]
+texture = ExtResource("1_fef3c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=2119210154]
+shape = SubResource("RectangleShape2D_ye7d0")

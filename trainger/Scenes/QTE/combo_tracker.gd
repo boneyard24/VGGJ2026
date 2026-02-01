@@ -50,6 +50,7 @@ func check_combo():
 			combo_end(false, "WRONG INPUTS!")
 			break
 		index += 1
+		AudioManager.play_combo_buttonpress()
 	
 	if input_buffer == SPECIAL_MOVE:
 		combo_end(true, "CORRECT!")

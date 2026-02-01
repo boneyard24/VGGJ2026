@@ -9,7 +9,7 @@ signal qte_popup_complete(eventSuccess : bool)
 @onready var SpriteBoxContainer = $SpriteBoxContainer
 
 var MinTime := 1.0
-var MaxTime := 5.0
+var MaxTime := 4.0
 var ComboLength := 1
 
 var _timer_bar_progress := 0.0

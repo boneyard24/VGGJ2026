@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bj0jc0ucnv8l6"]
 
-[ext_resource type="PackedScene" path="res://coreytest/comp_testing.tscn" id="1_glv2v"]
+[ext_resource type="PackedScene" uid="uid://qf4yt6nk5f0x" path="res://coreytest/comp_testing.tscn" id="1_glv2v"]
 [ext_resource type="PackedScene" uid="uid://b0quagujfn8r8" path="res://Scenes/GameManager/GameManager.tscn" id="1_r0du0"]
 [ext_resource type="PackedScene" uid="uid://cl7fsjf2d4taa" path="res://Dialogue Box/Boss/DialogueBox.tscn" id="3_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://cr1nswdvn84t4" path="res://Scenes/GameOver/GameOver.tscn" id="4_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://c1o4crbloc3vm" path="res://Dialogue Box/Player/PlayerDialogue.tscn" id="4_fos0i"]
+[ext_resource type="PackedScene" uid="uid://nugxoasljvtl" path="res://Scenes/GameOver/YouWin.tscn" id="6_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://sa6jfqdpuxdu" path="res://Entities/Boss/Boss.tscn" id="7_trn2v"]
 [ext_resource type="PackedScene" uid="uid://csrex37lsgvxe" path="res://Entities/Player/Player.tscn" id="8_03owx"]
 [ext_resource type="PackedScene" uid="uid://c4g1y7ktxton4" path="res://Scenes/TensionProgressBar/TensionProgressBar.tscn" id="9_03owx"]
@@ -47,6 +48,9 @@ offset_right = 662.0
 offset_bottom = 377.0
 
 [node name="GameOver" parent="." unique_id=1274482844 instance=ExtResource("4_cm0pq")]
+layout_mode = 1
+
+[node name="YouWin" parent="." unique_id=723328128 instance=ExtResource("6_wkp8b")]
 layout_mode = 1
 
 [node name="Boss" parent="." unique_id=1345478661 instance=ExtResource("7_trn2v")]

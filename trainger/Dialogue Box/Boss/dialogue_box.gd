@@ -1,6 +1,7 @@
 extends Panel
 
 signal dialogue_duration_calculated(duration: float)
+signal dialogue_complete()
 
 @onready var text_label: RichTextLabel = $DialogueText
 
@@ -90,6 +91,7 @@ func advance_line() -> void:
 func dialogue_finished():
 	if !stop_playback:
 		print("Dialogue complete.")
+		dialogue_complete.emit()
 	else:
 		print("Dialogue stopped.")
 

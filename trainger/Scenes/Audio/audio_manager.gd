@@ -13,6 +13,7 @@ const fails_stage2 = 1
 @onready var ui_prompt_win: AudioStreamPlayer = $SFX/UI/UI_YouWin
 @onready var ui_prompt_lose: AudioStreamPlayer = $SFX/UI/UI_YouLose
 @onready var ui_prompt_text: AudioStreamPlayer = $SFX/UI/UI_Prompt_Text
+@onready var ui_restartgame_button: AudioStreamPlayer = $SFX/UI/UI_RestartGame_Button
 
 # ----PLAY SOUNDS----
 
@@ -37,9 +38,9 @@ func play_prompt_text() -> void:
 func play_restart() -> void:
 	ui_prompt_lose.stop()
 	ui_prompt_win.stop()
+	ui_restartgame_button.play()
 
 func play_combo_buttonpress() -> void:
-	print("PlayButton")
 	ui_combo_buttonpress.play()
 
 

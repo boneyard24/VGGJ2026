@@ -4,12 +4,22 @@
 [ext_resource type="Script" uid="uid://b4hkatc52dtad" path="res://Scenes/QTE/combo_tracker.gd" id="2_1asnj"]
 [ext_resource type="PackedScene" uid="uid://cc7om3ba06g5i" path="res://Scenes/QTE/SpriteBoxContainer/SpriteBoxContainer.tscn" id="3_yvlxk"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1c3dc"]
+bg_color = Color(1.06, 0.42546073, 0.3520087, 0.278)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvlxk"]
-bg_color = Color(0.94509804, 0.23921569, 0.49803922, 1)
+bg_color = Color(0.0006452408, 0.62634355, 0.71758485, 0.6745098)
 
 [node name="QtePopup" type="Node2D" unique_id=1741924764]
 z_index = 1
 script = ExtResource("1_ng8vx")
+
+[node name="Panel" type="Panel" parent="." unique_id=387368254]
+offset_left = -104.63333
+offset_top = -103.0
+offset_right = 108.0
+offset_bottom = -1.31913
+theme_override_styles/panel = SubResource("StyleBoxFlat_1c3dc")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2106237570]
 
@@ -29,9 +39,9 @@ show_percentage = false
 script = ExtResource("2_1asnj")
 
 [node name="SpriteBoxContainer" parent="." unique_id=1093026482 instance=ExtResource("3_yvlxk")]
-offset_left = -125.0
-offset_top = -140.0
-offset_right = 127.0
-offset_bottom = -80.0
+offset_left = -126.0
+offset_top = -134.0
+offset_right = 126.0
+offset_bottom = -74.0
 size_flags_horizontal = 4
 size_flags_vertical = 4

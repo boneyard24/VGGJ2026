@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://sa6jfqdpuxdu" path="res://Entities/Boss/Boss.tscn" id="7_trn2v"]
 [ext_resource type="PackedScene" uid="uid://csrex37lsgvxe" path="res://Entities/Player/Player.tscn" id="8_03owx"]
 [ext_resource type="PackedScene" uid="uid://c4g1y7ktxton4" path="res://Scenes/TensionProgressBar/TensionProgressBar.tscn" id="9_03owx"]
+[ext_resource type="PackedScene" uid="uid://debt7kpxmr02j" path="res://Scenes/Level/Environment.tscn" id="10_wkp8b"]
 
 [node name="Main" type="Control" unique_id=922461951]
 layout_mode = 3
@@ -20,7 +21,7 @@ grow_vertical = 2
 pivot_offset = Vector2(960, 540)
 
 [node name="CompTesting" parent="." unique_id=1638788144 instance=ExtResource("1_glv2v")]
-z_index = -9
+z_index = -11
 position = Vector2(960, 540)
 
 [node name="GameManager" parent="." unique_id=270048902 instance=ExtResource("1_r0du0")]
@@ -52,9 +53,14 @@ layout_mode = 1
 [node name="AudioManager" parent="." unique_id=195267624 instance=ExtResource("6_3dxm6")]
 
 [node name="Boss" parent="." unique_id=1345478661 instance=ExtResource("7_trn2v")]
+z_index = -5
 position = Vector2(1277, 509)
 
 [node name="Player" parent="." unique_id=519405507 instance=ExtResource("8_03owx")]
+z_index = -5
 position = Vector2(790, 490)
 
 [node name="TensionProgressBar" parent="." unique_id=1740585256 instance=ExtResource("9_03owx")]
+
+[node name="Environment" parent="." unique_id=1706885947 instance=ExtResource("10_wkp8b")]
+position = Vector2(960, 540)

@@ -2,12 +2,15 @@
 
 [ext_resource type="Script" uid="uid://bphci0ua0uym3" path="res://Dialogue Box/Boss/dialogue_box.gd" id="1_djagf"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tw0c8"]
+
 [node name="DialogueBox" type="Panel" unique_id=1367545682]
 custom_minimum_size = Vector2(820, 150)
 offset_right = 820.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tw0c8")
 script = ExtResource("1_djagf")
 
 [node name="DialogueText" type="RichTextLabel" parent="." unique_id=1924625265]
@@ -25,6 +28,7 @@ offset_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(410, 70)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 21
 bbcode_enabled = true
 text = "test [wave] aasdsd [/wave]"

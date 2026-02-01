@@ -15,12 +15,17 @@ one_shot = true
 autostart = true
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1767744681]
-offset_left = -74.0
-offset_top = -13.0
-offset_right = 75.0
-offset_bottom = 14.0
+offset_left = -88.0
+offset_top = -31.0
+offset_right = 92.0
+offset_bottom = -1.0
+show_percentage = false
 
 [node name="ComboTracker" type="Node" parent="." unique_id=1334100137]
 script = ExtResource("2_1asnj")
 
 [node name="SpriteBoxContainer" parent="." unique_id=1093026482 instance=ExtResource("3_yvlxk")]
+offset_left = -99.0
+offset_top = -72.0
+offset_right = 101.0
+offset_bottom = -32.0

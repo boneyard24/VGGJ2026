@@ -5,6 +5,7 @@ extends Node2D
 #const QTEScene: PackedScene = preload("res://Scenes/QTE/QTEPopup.tscn")
 @onready var QTEScene = preload("res://Scenes/QTE/QTEPopup.tscn")
 @onready var GameOverUI := $"../GameOver"
+@onready var PlayerBox := $"../PlayerBox"
 
 
 const MAX_FAILS := 3
@@ -30,6 +31,7 @@ func SpawnQTE() -> void:
 	#QTEScene.instantiate()
 	#QTEScene.MinTime = 1
 	#QTEScene.MaxTime = 3
+	
 	add_child(instance)
 	instance.qte_popup_complete.connect(_qte_result)
 	#.connect(_on_timer_timeout)
@@ -38,6 +40,8 @@ func SpawnQTE() -> void:
 func _qte_result(eventSuccess: bool) -> void:
 	print("GM: Event Success - ", eventSuccess)
 	qteSpawnTimer.start(2)
+	
+	PlayerBox.event_result(eventSuccess)
 	
 	if (!eventSuccess):
 		current_fails += 1

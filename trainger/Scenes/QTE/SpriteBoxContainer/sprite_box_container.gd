@@ -15,3 +15,6 @@ func sprite_setup(sprites: Array[Texture2D]):
 	for sprite in sprites:
 		print("SPRITE LOOP")
 		#instantiate sprite into hbox
+		
+func sbc_test():
+	print("SPRITE CONNECTED")

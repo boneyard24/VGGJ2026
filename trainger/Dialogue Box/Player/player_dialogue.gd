@@ -30,8 +30,8 @@ func _ready():
 		return
 
 	# TODO: Catch whatever event triggers success or failure dialogue
-	await send_success_dialogue()
-	await send_failure_dialogue()
+	#await send_success_dialogue()
+	#await send_failure_dialogue()
 
 func load_dialogue_json(path: String) -> Dictionary:
 	var file := FileAccess.open(path, FileAccess.READ)
@@ -44,6 +44,13 @@ func load_dialogue_json(path: String) -> Dictionary:
 	var json = JSON.parse_string(json_text)
 
 	return json.dialogue.player
+	
+func event_result(success: bool):
+	if (success):
+		send_success_dialogue()
+	else:
+		send_failure_dialogue()
+	
 
 func send_success_dialogue():
 	await show_line(player_dialogue.success.lines[success_current_line], success_typing_speed, success_line_wait_time)

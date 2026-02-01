@@ -3,36 +3,65 @@
 [ext_resource type="Script" uid="uid://clehxreppukdt" path="res://Scenes/QTE/SpriteBoxContainer/sprite_box_container.gd" id="1_uryap"]
 
 [node name="HBoxContainer" type="HBoxContainer" unique_id=1093026482]
-offset_left = -71.0
-offset_top = -53.0
-offset_right = 71.0
-offset_bottom = -13.0
+offset_left = -111.0
+offset_top = -60.0
+offset_right = 109.0
 script = ExtResource("1_uryap")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1343449731]
-custom_minimum_size = Vector2(20, 20)
+z_index = -1
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 color = Color(1, 0, 0, 1)
 
+[node name="Label" type="Label" parent="ColorRect" unique_id=483131179]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -6.0
+offset_right = 40.0
+offset_bottom = 39.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "UP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1534817476]
-custom_minimum_size = Vector2(20, 20)
+z_index = -1
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 color = Color(1, 0, 0, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="." unique_id=1019926556]
-custom_minimum_size = Vector2(20, 20)
+z_index = -1
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 color = Color(1, 0, 0, 1)
 
 [node name="ColorRect4" type="ColorRect" parent="." unique_id=1052947044]
-custom_minimum_size = Vector2(20, 20)
+z_index = -1
+custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 color = Color(1, 0, 0, 1)
+
+[node name="Label2" type="Label" parent="ColorRect4" unique_id=1864869021]
+layout_mode = 0
+offset_left = -57.0
+offset_top = -3.0
+offset_right = 47.0
+offset_bottom = 42.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "DOWN"
+horizontal_alignment = 1
+vertical_alignment = 1

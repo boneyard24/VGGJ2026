@@ -6,9 +6,11 @@ signal qte_popup_complete(eventSuccess : bool)
 @onready var QTETimer : Timer = $QTETimer
 @onready var TimerBar : ProgressBar = $ProgressBar
 @onready var ComboTracker : Node = $ComboTracker
+@onready var SpriteBoxContainer = $SpriteBoxContainer
 
 var MinTime := 1.0
 var MaxTime := 5.0
+var ComboLength := 1
 
 var _timer_bar_progress := 0.0
 
@@ -27,6 +29,7 @@ func _ready() -> void:
 	
 	ComboTracker.combo_result.connect(end_qte)
 	
+	
 	"""
 	#Random Screen Position Segment
 	"""
@@ -39,7 +42,9 @@ func _ready() -> void:
 	# Generate random X and Y coordinates within the screen boundaries
 	# Use randf_range for floating-point positions, or randi_range for integer positions
 	var rand_x: float = rng.randf_range(0, screen_size.x)
+	rand_x = clamp(rand_x, 100, screen_size.x-100)
 	var rand_y: float = rng.randf_range(0, screen_size.y)
+	rand_y = clamp(rand_y, 100, screen_size.y-100)
 	
 	# Create a new random position vector
 	var random_position: Vector2 = Vector2(rand_x, rand_y)

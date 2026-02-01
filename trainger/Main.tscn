@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b0quagujfn8r8" path="res://Scenes/GameManager/GameManager.tscn" id="1_r0du0"]
 [ext_resource type="PackedScene" uid="uid://cl7fsjf2d4taa" path="res://Dialogue Box/Boss/DialogueBox.tscn" id="3_cm0pq"]
 [ext_resource type="PackedScene" uid="uid://cr1nswdvn84t4" path="res://Scenes/GameOver/GameOver.tscn" id="4_cm0pq"]
+[ext_resource type="PackedScene" uid="uid://c1o4crbloc3vm" path="res://Dialogue Box/Player/PlayerDialogue.tscn" id="4_fos0i"]
 
 [node name="Main" type="Control" unique_id=922461951]
 layout_mode = 3
@@ -14,15 +15,15 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(960, 540)
 
+[node name="CompTesting" parent="." unique_id=1638788144 instance=ExtResource("1_glv2v")]
+z_index = -9
+position = Vector2(960, 540)
+
 [node name="GameManager" parent="." unique_id=270048902 instance=ExtResource("1_r0du0")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=285742609]
 z_index = -10
 anchor_mode = 0
-
-[node name="CompTesting" parent="." unique_id=1638788144 instance=ExtResource("1_glv2v")]
-z_index = -9
-position = Vector2(960, 540)
 
 [node name="DialogueBox" parent="." unique_id=1743243020 instance=ExtResource("3_cm0pq")]
 layout_mode = 0
@@ -32,6 +33,13 @@ offset_right = 1397.0
 offset_bottom = 1004.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="PlayerBox" parent="." unique_id=344526282 instance=ExtResource("4_fos0i")]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 180.0
+offset_right = 901.0
+offset_bottom = 340.0
 
 [node name="GameOver" parent="." unique_id=1274482844 instance=ExtResource("4_cm0pq")]
 layout_mode = 1

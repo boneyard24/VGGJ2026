@@ -2,6 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://dxst8id1wgvtk" path="res://Scenes/Audio/SourceFiles/Music/MX_ElevatorMusicTEMP_01.ogg" id="1_stytc"]
 [ext_resource type="AudioStream" uid="uid://b6rc3qwe1uv62" path="res://Scenes/Audio/SourceFiles/SFX/AMB_Office_01.ogg" id="2_whaik"]
+[ext_resource type="AudioStream" uid="uid://dthd17tlwpyd7" path="res://Scenes/Audio/SourceFiles/SFX/UI_Prompt_Success.wav" id="3_anrdn"]
 
 [node name="AudioManager" type="Node" unique_id=195267624]
 
@@ -22,3 +23,10 @@ stream = ExtResource("2_whaik")
 volume_db = -22.0
 autoplay = true
 bus = &"Ambience"
+
+[node name="UI" type="Node" parent="SFX" unique_id=986525010]
+
+[node name="UI_Prompt_Success" type="AudioStreamPlayer" parent="SFX/UI" unique_id=1403140021]
+stream = ExtResource("3_anrdn")
+volume_db = -8.0
+bus = &"UI"

@@ -23,6 +23,11 @@ buses/default_bus_layout="uid://c6s8khymfge6v"
 
 Globals="*uid://nrwohc5bkfil"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [input]
 
 up={

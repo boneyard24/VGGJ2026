@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dbebq51rari4e" path="res://Scenes/Audio/AudioManager.tscn" id="6_3dxm6"]
 [ext_resource type="PackedScene" uid="uid://sa6jfqdpuxdu" path="res://Entities/Boss/Boss.tscn" id="7_trn2v"]
 [ext_resource type="PackedScene" uid="uid://csrex37lsgvxe" path="res://Entities/Player/Player.tscn" id="8_03owx"]
+[ext_resource type="PackedScene" uid="uid://c4g1y7ktxton4" path="res://Scenes/TensionProgressBar/TensionProgressBar.tscn" id="9_03owx"]
 
 [node name="Main" type="Control" unique_id=922461951]
 layout_mode = 3
@@ -30,20 +31,20 @@ anchor_mode = 0
 
 [node name="DialogueBox" parent="." unique_id=1743243020 instance=ExtResource("3_cm0pq")]
 layout_mode = 0
-offset_left = 557.0
-offset_top = 844.0
-offset_right = 1397.0
-offset_bottom = 1004.0
+offset_left = 571.0
+offset_top = 843.0
+offset_right = 1391.0
+offset_bottom = 993.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="PlayerBox" parent="." unique_id=344526282 instance=ExtResource("4_fos0i")]
 z_index = -5
 layout_mode = 0
-offset_left = 61.0
-offset_top = 180.0
-offset_right = 901.0
-offset_bottom = 340.0
+offset_left = 349.0
+offset_top = 158.0
+offset_right = 669.0
+offset_bottom = 358.0
 
 [node name="GameOver" parent="." unique_id=1274482844 instance=ExtResource("4_cm0pq")]
 layout_mode = 1
@@ -55,3 +56,5 @@ position = Vector2(1277, 509)
 
 [node name="Player" parent="." unique_id=519405507 instance=ExtResource("8_03owx")]
 position = Vector2(790, 490)
+
+[node name="TensionProgressBar" parent="." unique_id=1740585256 instance=ExtResource("9_03owx")]

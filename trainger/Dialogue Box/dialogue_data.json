@@ -1,7 +1,7 @@
 {
 	"dialogue": {
 		"boss": {
-			"typing_speed": 0.04,
+			"typing_speed": 0.037,
 			"line_wait_time": 1,
 			"lines": [
 				"Good morning Perry, how was the weekend?",
@@ -54,10 +54,18 @@
 					"100%",
 					"Yep",
 					"Oh yeah, For sure",
+					"Uh-huh",
+					"Mmhmm",
+					"Mmm Gotcha",
+					"Makes sense to me",
+					"You don't hear a word I say do you?",
 					"Crazy",
-					"Mathamtical",
+					"Mathematical",
 					"Catchphrase",
 					"I couldn't agree more",
+					"No yeah, For sure",
+					"Fo' sho",
+					
 				]
 
 			},
@@ -73,6 +81,7 @@
 					"The fastest train in the world was decided in 2015 when Japan’s L0 Series Maglev set a new world speed record, reaching an astonishing 375mph (603 km/h).",
 					"The longest train tunnel in the world is the Gotthard Base Tunnel in Switzerland. It stretches 35.5 miles (57 km) beneath the beautiful Swiss Alps",
 					"https://en.wikipedia.org/wiki/Steam_locomotive",
+					""
 				]
 			}
 		}

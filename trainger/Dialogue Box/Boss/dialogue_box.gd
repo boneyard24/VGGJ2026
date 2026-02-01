@@ -48,30 +48,35 @@ func start():
 	await show_line(boss_dialogue.lines[current_line])
 
 func show_line(text: String) -> void:
-	current_full_text = ""
-	var _visible_chars := 0
-	var i := 0
-	
-	while i < text.length():
-		# Check if we're at the start of a bbcode tag
-		if text[i] == '[':
-			var end_bracket := text.find(']', i)
-			if end_bracket != -1:
-				# Add the complete tag to current_full_text
-				current_full_text += text.substr(i, end_bracket - i + 1)
-				i = end_bracket + 1
-				text_label.text = current_full_text
-				continue
+		current_full_text = ""
+		var _visible_chars := 0
+		var i := 0
 		
-		# Regular character - add it and increment visible char count
-		current_full_text += text[i]
-		_visible_chars += 1
-		text_label.text = current_full_text
-		await get_tree().create_timer(typing_speed).timeout
-		i += 1
+		while i < text.length():
+			if !stop_playback:
+				# Check if we're at the start of a bbcode tag
+				if text[i] == '[':
+					var end_bracket := text.find(']', i)
+					if end_bracket != -1:
+						# Add the complete tag to current_full_text
+						current_full_text += text.substr(i, end_bracket - i + 1)
+						i = end_bracket + 1
+						text_label.text = current_full_text
+						continue
+				
+				# Regular character - add it and increment visible char count
+				current_full_text += text[i]
+				_visible_chars += 1
+				text_label.text = current_full_text
+				await get_tree().create_timer(typing_speed).timeout
+				i += 1
+			else:
+				i = text.length()
+				text_label.text = text
+				dialogue_finished()
 
-	await get_tree().create_timer(line_wait_time).timeout
-	await advance_line()
+		await get_tree().create_timer(line_wait_time).timeout
+		await advance_line()
 
 func advance_line() -> void:
 	if !stop_playback:

@@ -4,18 +4,25 @@ extends Node2D
 
 #const QTEScene: PackedScene = preload("res://Scenes/QTE/QTEPopup.tscn")
 @onready var QTEScene = preload("res://Scenes/QTE/QTEPopup.tscn")
+@onready var GameOverUI := $"../GameOver"
+
 
 const MAX_FAILS := 3
 var current_fails := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GameOverUI.visible = false
 	qteSpawnTimer.timeout.connect(SpawnQTE)
 	qteSpawnTimer.start(2) # Manually start the timer if Auto Start is off
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func _input(event: InputEvent) -> void:
+	if (event.is_action_released("enter", true)) :
+		ResetGame()
 
 func SpawnQTE() -> void:
 	print("SPAWNQTE")
@@ -40,6 +47,9 @@ func _qte_result(eventSuccess: bool) -> void:
 func GameOver() -> void:
 	print("GM: GAMEOVER GAMEOVER GAMEOVER GAMEOVER GAMEOVER")
 	qteSpawnTimer.stop()
+	GameOverUI.visible = true
 	
 func ResetGame() -> void:
-	pass
+	current_fails = 0
+	GameOverUI.visible = false
+	qteSpawnTimer.start(2) # Manually start the timer if Auto Start is off

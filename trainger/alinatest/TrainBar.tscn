@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cvb0ybmq1skvh"]
+
+[ext_resource type="PackedScene" uid="uid://cl7fsjf2d4taa" path="res://Dialogue Box/Boss/DialogueBox.tscn" id="1_e0eta"]
+[ext_resource type="PackedScene" uid="uid://c4g1y7ktxton4" path="res://Scenes/TensionProgressBar/TensionProgressBar.tscn" id="2_dk2qt"]
+
+[node name="Main" type="Node2D" unique_id=188379472]
+
+[node name="DialogueBox" parent="." unique_id=1367545682 instance=ExtResource("1_e0eta")]
+offset_left = 224.0
+offset_top = 265.0
+offset_right = 1064.0
+offset_bottom = 425.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="TensionProgressBar" parent="." unique_id=1740585256 instance=ExtResource("2_dk2qt")]

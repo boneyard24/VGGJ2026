@@ -10,6 +10,7 @@ extends Node2D
 
 const MAX_FAILS := 3
 var current_fails := 0
+var spawn_count := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,15 +28,15 @@ func _input(event: InputEvent) -> void:
 
 func SpawnQTE() -> void:
 	print("SPAWNQTE")
+	spawn_count += 1
 	var instance : qte_popup = QTEScene.instantiate()
-	#QTEScene.instantiate()
-	#QTEScene.MinTime = 1
-	#QTEScene.MaxTime = 3
+	
+	var rng := RandomNumberGenerator.new()
+	instance.ComboLength = rng.randi_range(1, (1+spawn_count) / 2)
 	
 	add_child(instance)
 	instance.qte_popup_complete.connect(_qte_result)
-	#.connect(_on_timer_timeout)
-	#var new_qte = qte_popup.
+	
 
 func _qte_result(eventSuccess: bool) -> void:
 	print("GM: Event Success - ", eventSuccess)

@@ -53,12 +53,18 @@ func event_result(success: bool):
 	
 
 func send_success_dialogue():
-	await show_line(player_dialogue.success.lines[success_current_line], success_typing_speed, success_line_wait_time)
-	success_current_line += 1
+	if success_current_line < player_dialogue.success.lines.size():
+		await show_line(player_dialogue.success.lines[success_current_line], success_typing_speed, success_line_wait_time)
+		success_current_line += 1
+	else:
+		success_current_line = 0  # Reset for future use
 
 func send_failure_dialogue():
-	await show_line(player_dialogue.failure.lines[failure_current_line], failure_typing_speed, failure_line_wait_time)
-	failure_current_line += 1
+	if failure_current_line < player_dialogue.failure.lines.size():
+		await show_line(player_dialogue.failure.lines[failure_current_line], failure_typing_speed, failure_line_wait_time)
+		failure_current_line += 1
+	else:
+		failure_current_line = 0  # Reset for future use
 
 func show_line(text: String, typing_speed: float, line_wait_time: float) -> void:
 	current_full_text = ""

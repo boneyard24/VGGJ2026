@@ -6,13 +6,15 @@ const fails_stage2 = 1
 
 
 @onready var main_music: AudioStreamPlayer = $Music/MX_MainMusic_Office
-
 @onready var ui_prompt_popup: AudioStreamPlayer = $SFX/UI/UI_Prompt_PopUp
+@onready var ui_combo_buttonpress: AudioStreamPlayer = $SFX/UI/UI_Combo_ButtonPress
 @onready var ui_prompt_success: AudioStreamPlayer = $SFX/UI/UI_Prompt_Success
 @onready var ui_prompt_failed: AudioStreamPlayer = $SFX/UI/UI_Prompt_Failed
 @onready var ui_prompt_win: AudioStreamPlayer = $SFX/UI/UI_YouWin
 @onready var ui_prompt_lose: AudioStreamPlayer = $SFX/UI/UI_YouLose
 @onready var ui_prompt_text: AudioStreamPlayer = $SFX/UI/UI_Prompt_Text
+
+# ----PLAY SOUNDS----
 
 func play_prompt_popup() -> void:
 	ui_prompt_popup.play()
@@ -35,8 +37,13 @@ func play_prompt_text() -> void:
 func play_restart() -> void:
 	ui_prompt_lose.stop()
 	ui_prompt_win.stop()
-	
-# MUSIC MIX SNAPSHOTS
+
+func play_combo_buttonpress() -> void:
+	print("PlayButton")
+	ui_combo_buttonpress.play()
+
+
+# ----MUSIC MIX SNAPSHOTS----
 
 func music_stage_begin():
 	var stream : AudioStreamSynchronized = main_music.stream
@@ -83,7 +90,7 @@ func music_stage_fe():
 	stream.set_sync_stream_volume(4, -60)
 	stream.set_sync_stream_volume(5, -60)
 
-# MUSIC MIX EVENTS
+# ----MUSIC MIX EVENTS----
 
 func update_main_music_qte(current_fails: int) -> void:
 	match current_fails:

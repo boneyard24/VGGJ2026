@@ -12,6 +12,12 @@
 [ext_resource type="AudioStream" uid="uid://bko2a4rugwchl" path="res://Scenes/Audio/SourceFiles/Music/MX_Main_Rest.ogg" id="5_v1hhk"]
 [ext_resource type="AudioStream" uid="uid://chcykn4wt5dw6" path="res://Scenes/Audio/SourceFiles/Music/MX_Main_Drums.ogg" id="6_hs5kb"]
 [ext_resource type="AudioStream" uid="uid://21e5jofkt1r3" path="res://Scenes/Audio/SourceFiles/SFX/UI_Prompt_Failed.wav" id="8_v1hhk"]
+[ext_resource type="AudioStream" uid="uid://cnydw6xm5mkes" path="res://Scenes/Audio/SourceFiles/SFX/UI_Combo_ButtonPress-001.wav" id="13_b4lxb"]
+[ext_resource type="AudioStream" uid="uid://41fg2ewv7vh8" path="res://Scenes/Audio/SourceFiles/SFX/UI_Combo_ButtonPress-002.wav" id="14_bwg7j"]
+[ext_resource type="AudioStream" uid="uid://dnueadiik4is7" path="res://Scenes/Audio/SourceFiles/SFX/UI_Combo_ButtonPress-003.wav" id="15_asc6d"]
+[ext_resource type="AudioStream" uid="uid://de3a5ftpiayqm" path="res://Scenes/Audio/SourceFiles/SFX/UI_Combo_ButtonPress-004.wav" id="16_w3pqh"]
+[ext_resource type="AudioStream" uid="uid://usit10ugqpt0" path="res://Scenes/Audio/SourceFiles/SFX/UI_Combo_ButtonPress-005.wav" id="17_fyayr"]
+[ext_resource type="AudioStream" uid="uid://bta5nrtuoxxws" path="res://Scenes/Audio/SourceFiles/SFX/UI_Combo_ButtonPress-006.wav" id="18_lwk2e"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_anrdn"]
 stream_count = 6
@@ -27,6 +33,16 @@ stream_4/stream = ExtResource("4_2jrjh")
 stream_4/volume = -60.0
 stream_5/stream = ExtResource("6_hs5kb")
 stream_5/volume = -60.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_cxnu1"]
+random_pitch = 1.0594631
+streams_count = 6
+stream_0/stream = ExtResource("13_b4lxb")
+stream_1/stream = ExtResource("14_bwg7j")
+stream_2/stream = ExtResource("15_asc6d")
+stream_3/stream = ExtResource("16_w3pqh")
+stream_4/stream = ExtResource("17_fyayr")
+stream_5/stream = ExtResource("18_lwk2e")
 
 [node name="AudioManager" type="Node" unique_id=195267624]
 script = ExtResource("1_hs5kb")
@@ -78,6 +94,12 @@ bus = &"UI"
 
 [node name="UI_Prompt_Text" type="AudioStreamPlayer" parent="SFX/UI" unique_id=951375049]
 stream = ExtResource("3_anrdn")
-volume_db = -2.0
+volume_db = -10.0
 pitch_scale = 4.21
+bus = &"UI"
+
+[node name="UI_Combo_ButtonPress" type="AudioStreamPlayer" parent="SFX/UI" unique_id=1791664924]
+stream = SubResource("AudioStreamRandomizer_cxnu1")
+volume_db = -10.0
+mix_target = 2
 bus = &"UI"

@@ -22,3 +22,16 @@ func play_prompt_win() -> void:
 
 func play_prompt_lose() -> void:
 	ui_prompt_lose.play()
+
+func update_main_music_qte(_x: int) -> void:
+	main_music.play()
+
+# Very experimental will fail
+func fade_track(sync: AudioStreamSynchronized, track: int, target: float, duration: float):
+    main_music.set_sync_stream
+    var tween = create_tween()
+    var start = sync.get_stream_volume(track)
+
+    tween.tween_method(
+        func(v): sync.set_stream_volume(track, v), start, target, duration
+    )

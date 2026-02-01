@@ -12,6 +12,7 @@ var typing_speed := 0.0
 var line_wait_time := 0.0
 
 var total_duration := 0.0
+var stop_playback := false
 
 func _ready():
 	text_label.bbcode_enabled = true
@@ -81,6 +82,9 @@ func advance_line() -> void:
 
 func dialogue_finished():
 	print("Dialogue complete.")
+
+func stop():
+	stop_playback = true
 
 func calculate_boss_dialogue_duration() -> float:
 	var duration := 0.0

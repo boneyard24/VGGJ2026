@@ -75,17 +75,19 @@
 			},
 			"failure": {
 				"typing_speed": 0.01,
-				"line_wait_time": 3,
+				"line_wait_time": 2,
 				"lines": [
-					"When you add up all of the train tracks on Earth, you can travel to the moon and back almost twice",
-					"The longest route for one train can be made between Moscow and Vladivostok on Trans-Siberian Express railway line that is 9,297 kilometers long. It covers nearly 8 time zones",
-					"There was a long standing internet rumour that roman roads impacted the design of train tracks in North America, which resulted in all sorts of funny issues with space travel.",
-					"All aboard the train to failure!",
-					"The heaviest train ever recorded weighted 95,000 tonnes! This freight train from Australia was 7.3 kilometers long and had the weight of 27 thousand fully grown elephants",
-					"The fastest train in the world was decided in 2015 when Japan’s L0 Series Maglev set a new world speed record, reaching an astonishing 375mph (603 km/h).",
-					"The longest train tunnel in the world is the Gotthard Base Tunnel in Switzerland. It stretches 35.5 miles (57 km) beneath the beautiful Swiss Alps",
-					"https://en.wikipedia.org/wiki/Steam_locomotive",
-					""
+					"WHEN YOU ADD UP ALL OF THE TRAIN TRACKS ON EARTH, YOU CAN TRAVEL TO THE MOON AND BACK (ALMOST) TWICE!",
+					"THE LONGEST ROUTE FOR ONE TRAIN CAN BE MADE BETWEEN MOSCOW AND VLADIVOSTOK ON THE TRANS-SIBERIAN EXPRESS RAILWAY LINE THAT IS 9,297 KM LONG!",
+					"THERE WAS A LONG STANDING INTERNET RUMOUR THAT ROMAN ROADS IMPACTED THE DESIGN OF NORTH AMERICAN RAILWAYS. WHICH RESULTED IN ALL SORTS OF FUNNY ISSUES WITH SPACE TRAVEL.",
+					"ALL ABOARD THE TRAIN TO FAILURE!",
+					"THE HEAVIEST TRAIN EVER RECORDED WEIGHED 95,000 TONNES! THIS FREIGHT TRAIN FROM AUSTRALIA WAS 7.3 KILOMETERS LONG AND HAD THE WEIGHT OF 27 THOUSAND FULLY GROWN ELEPHANTS.",
+					"HTTPS://EN.WIKIPEDIA.ORG/WIKI/STEAM_LOCOMOTIVE",
+					"THOMAS THE TANK ENGINE WAS MY SEXUAL AWAKENING",
+					"THE FASTEST TRAIN IN THE WORLD WAS DECIDED IN 2015 WHEN JAPAN'S L0 SERIES MAGLEV SET A NEW WORLD SPEED RECORD, REACHING AND ASTONISHING 603 KM/H.",
+					"THE LONGEST TRAIN TUNNEL IN THE WORLD IS THE GOTTHARD BASE TUNNEL IN SWITZERLAND. IT STRETCHES 57 KM BENEATH THE BEAUTIFUL SWISS ALPS.",
+					
+					
 				]
 			}
 		}

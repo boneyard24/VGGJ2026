@@ -52,8 +52,8 @@ func start_dialogue():
 func show_line(text: String) -> void:
 	text_label.clear()
 
-	for char in text:
-		text_label.append_text(char)
+	for ch in text:
+		text_label.append_text(ch)
 		await get_tree().create_timer(typing_speed).timeout
 
 	await get_tree().create_timer(line_wait_time).timeout

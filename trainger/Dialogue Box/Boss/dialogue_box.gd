@@ -19,7 +19,6 @@ func _ready():
 	boss_dialogue = load_dialogue_json("res://Dialogue Box/dialogue_data.json")
 
 	typing_speed = boss_dialogue.typing_speed
-	print(typing_speed)
 	line_wait_time = boss_dialogue.line_wait_time
 
 	total_duration = calculate_boss_dialogue_duration()
@@ -28,7 +27,7 @@ func _ready():
 		push_warning("Boss dialogue is empty.")
 		return
 
-	start_dialogue()
+	start()
 
 func load_dialogue_json(path: String) -> Dictionary:
 	var file := FileAccess.open(path, FileAccess.READ)
@@ -42,13 +41,13 @@ func load_dialogue_json(path: String) -> Dictionary:
 
 	return json.dialogue.boss
 
-func start_dialogue():
+func start():
 	current_line = 0
 	await show_line(boss_dialogue.lines[current_line])
 
 func show_line(text: String) -> void:
 	current_full_text = ""
-	var visible_chars := 0
+	var _visible_chars := 0
 	var i := 0
 	
 	while i < text.length():
@@ -64,7 +63,7 @@ func show_line(text: String) -> void:
 		
 		# Regular character - add it and increment visible char count
 		current_full_text += text[i]
-		visible_chars += 1
+		_visible_chars += 1
 		text_label.text = current_full_text
 		await get_tree().create_timer(typing_speed).timeout
 		i += 1
@@ -73,15 +72,19 @@ func show_line(text: String) -> void:
 	await advance_line()
 
 func advance_line() -> void:
-	current_line += 1
+	if !stop_playback:
+		current_line += 1
 
-	if current_line < boss_dialogue.lines.size():
-		await show_line(boss_dialogue.lines[current_line])
-	else:
-		dialogue_finished()
+		if current_line < boss_dialogue.lines.size():
+			await show_line(boss_dialogue.lines[current_line])
+		else:
+			dialogue_finished()
 
 func dialogue_finished():
-	print("Dialogue complete.")
+	if !stop_playback:
+		print("Dialogue complete.")
+	else:
+		print("Dialogue stopped.")
 
 func stop():
 	stop_playback = true

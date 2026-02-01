@@ -79,7 +79,6 @@ func music_stage_fe():
 # MUSIC MIX EVENTS
 
 func update_main_music_qte(current_fails: int) -> void:
-	# main_music.play()
 	match current_fails:
 		fails_stage1:
 			music_stage_1()
